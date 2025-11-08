@@ -1,0 +1,243 @@
+import React, { useEffect, useRef,useState } from 'react'
+import { useLocation } from 'react-router-dom';
+import './Movies.css';
+import '@fortawesome/fontawesome-free/css/all.min.css';
+import { Link } from 'react-router-dom';
+import TrendingMovies from './TrendingMovies';
+import MostWatchedMovies from './MostWatchedMovies';
+import UnderratedMovies from './UnderratedMovies';
+import { useNavigate } from 'react-router-dom';
+import VideoPlayer from './VideoPlayer';
+
+// https://i.ytimg.com/vi/tPlRgVCeBT8/maxresdefault.jpg
+
+function Movies() {
+
+  const [play,setPlay] = useState(false);
+  const thama = <img src='https://i.ytimg.com/vi/13BMnDiqIIM/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAoXlSSY6Hac0rjrB9NSKk4SXc7Ug' alt = "Thama"></img>
+    const slider = useRef();
+    const slider2 = useRef();
+    const slider3 = useRef();
+    let tx = 0;
+    
+
+   const SlideForward1 = () =>{
+    if(tx > -50){
+      tx -= 12;
+    }
+    slider.current.style.transform = `translateX(${tx}%)`;
+    slider.current.style.transition = '1.8s';
+    
+  }
+
+  const SlideBackward1 = () =>{
+    if(tx < 0){
+      tx += 15;
+    }
+    slider.current.style.transform = `translateX(${tx}%)`;
+    slider.current.style.transition = '1.8s';
+  }
+
+  const SlideForward2 = () =>{
+    if(tx > -60.1){
+      tx -= 12;
+    }
+    slider2.current.style.transform = `translateX(${tx}%)`;
+    slider2.current.style.transition = '1.8s';
+  }
+
+  const SlideBackward2 = () =>{
+    if(tx < 0){
+      tx += 12;
+    }
+    slider2.current.style.transform = `translateX(${tx}%)`;
+    slider2.current.style.transition = '1.8s';
+  }
+
+  const SlideForward3 = () =>{
+    if(tx > -16){
+      tx -= 15;
+    }
+    slider3.current.style.transform = `translateX(${tx}%)`;
+    slider3.current.style.transition = '1.8s';
+  }
+
+  const SlideBackward3 = () =>{
+    if(tx < 0){
+      tx += 15;
+    }
+    slider3.current.style.transform = `translateX(${tx}%)`;
+    slider3.current.style.transition = '1.8s';
+  }
+
+    // const location = useLocation();
+  
+    // useEffect(() => {
+    //   window.scrollTo(0,0);
+    // }, [location]);
+
+  return (
+    <>
+    <div className="slider-wrapper">
+      <form action="#">
+      <div className = "catlog">
+        <h3>Categories</h3>
+        <input type='checkbox'/>
+        <label>Advanture</label><br></br>
+        <input type='checkbox'/>
+        <label>Action</label><br></br>
+        <input type='checkbox'/>
+        <label>Cartoon</label><br></br>
+        <input type='checkbox'/>
+        <label>Comedy</label><br></br>
+        <input type='checkbox'/>
+        <label>Drama</label><br></br>
+        <input type='checkbox'/>
+        <label>Emotional</label><br></br>
+        <input type='checkbox'/>
+        <label>Fantacy</label><br></br>
+        <input type='checkbox'/>
+        <label>Geography</label><br></br>
+        <input type='checkbox'/>
+        <label>Horror</label><br></br>
+        <input type='checkbox'/>
+        <label>Love-Story</label><br></br>
+        <input type='checkbox'/>
+        <label>Music</label><br></br>
+        <input type='checkbox'/>
+        <label>Romantic</label><br></br>
+        <input type='checkbox'/>
+        <label>Sci-Fy</label><br></br>
+        <br></br>
+        <h3>Languages</h3>
+        <input type='checkbox'/>
+        <label>English</label><br></br>
+        <input type='checkbox'/>
+        <label>Marathi</label><br></br>
+        <input type='checkbox'/>
+        <label>Hindi</label><br></br>
+        <input type='checkbox'/>
+        <label>Tamil</label><br></br>
+        <br></br>
+        <h3>Time</h3>
+        <input type = "radio" name='time'/>
+        <label>Morning</label><br></br>
+        <input type = "radio" name='time'/>
+        <label>Evening</label><br></br>
+        <input type = "radio" name='time'/>
+        <label>Night</label><br></br>
+        <button className='btn'>Apply</button>
+      </div>
+      </form>
+      <div className = "main-movie">
+        <div className='img'>
+          {thama}
+          <p className='upcomming-title'>Upcomming movie</p>
+          <div className='btns'>
+          <button className='btn43'>Book Now</button>
+          <button className='alt' onClick={()=>setPlay(true)}>Play Trailer</button>
+        </div>
+        </div>
+     </div>
+     <div className='lounch'>
+     <h3>Trending Now</h3>
+     </div>
+     <div className='right'>
+        <i className="fa-solid fa-chevron-right" onClick={SlideForward1}></i>
+        </div>
+      <div className='left'>
+        <i className="fa-solid fa-chevron-left" onClick={SlideBackward1}></i>
+      </div>
+
+     <div className='current-movies' ref={slider}>
+      {TrendingMovies.filter(movie => movie.category === "Trending").map((movie,index) => (
+    <div className='current-movie' key={index}>
+      <div className='m-image'> 
+        <img src={movie.image} alt={movie.title} />
+      </div>
+      <h3 className='m-title'>{movie.title} <i>({movie.year})</i></h3>
+      <p className='type'>Type : {movie.type}</p>
+      <p className='price'>₹ {movie.price}</p>
+      <p hidden>{movie.desc}</p>
+      <p hidden>{movie.director}</p>
+      <p hidden>{movie.writers}</p>
+      <p hidden>{movie.stars}</p>
+      <button className='booking'><Link to={`/movie/trending/${movie.id}`}>Book Now</Link>
+</button>
+    </div>
+  ))}
+      </div>
+
+      <div className='lounch'>
+     <h3>Most Watched</h3>
+     </div>
+     <div className='right'>
+        <i className="fa-solid fa-chevron-right" onClick={SlideForward2}></i>
+        </div>
+      <div className='left'>
+        <i className="fa-solid fa-chevron-left" onClick={SlideBackward2}></i>
+      </div>
+
+     <div className='top-movies' ref={slider2}>
+
+      {MostWatchedMovies.filter(movie => movie.category === "Most Watched").map((movie,index) => (
+    <div className='top-movie' key={index}>
+      <div className='m-image'>
+        <img src={movie.image} alt={movie.title} />
+      </div>
+      <h3 className='m-title'>{movie.title} <i>({movie.year})</i></h3>
+      <p className='type'>Type : {movie.type}</p>
+      <p className='price'>₹ {movie.price}</p>
+      <p hidden>{movie.desc}</p>
+      <p hidden>{movie.director}</p>
+      <p hidden>{movie.writers}</p>
+      <p hidden>{movie.stars}</p>
+      <button className='booking'><Link to={`/movie/mostwatched/${movie.id}`}>Book Now</Link>
+</button>
+    </div>
+  ))}
+      </div>
+
+      <div className='lounch'>
+     <h3>Underrated</h3>
+     </div>
+     <div className='right'>
+        <i className="fa-solid fa-chevron-right" onClick={SlideForward3}></i>
+        </div>
+      <div className='left'>
+        <i className="fa-solid fa-chevron-left" onClick={SlideBackward3}></i>
+      </div>
+
+     <div className='top-movies' ref={slider3}>
+
+      {UnderratedMovies.filter(movie => movie.category === "Underrated").map((movie,index) => (
+    <div className='top-movie' key={index}>
+      <div className='m-image'>
+        <img src={movie.image} alt={movie.title} />
+      </div>
+      <h3 className='m-title'>{movie.title} <i>({movie.year})</i></h3>
+      <p className='type'>Type : {movie.type}</p>
+      <p className='price'>₹ {movie.price}</p>
+      <p hidden>{movie.desc}</p>
+      <p hidden>{movie.director}</p>
+      <p hidden>{movie.writers}</p>
+      <p hidden>{movie.stars}</p>
+      <button className='booking'><Link to={`/movie/underrated/${movie.id}`}>Book Now</Link>
+
+</button>
+    </div>
+  ))}
+    </div>
+  </div>
+  {play &&
+  <div className="video">
+  <VideoPlayer></VideoPlayer>
+  </div>
+  }
+   {play && 
+   <VideoPlayer onClose={() => setPlay(false)} />}
+    </> 
+  )
+}
+
+export default Movies
