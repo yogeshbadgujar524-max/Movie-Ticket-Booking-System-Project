@@ -5,8 +5,10 @@ import { BookingContext } from './BookingContext';
 import axios, { Axios } from 'axios';
 import Swal from 'sweetalert2';
 import 'sweetalert2/dist/sweetalert2.min.css';
+import QRCode from 'react-qr-code';
 
 function SeatBooking() {
+  const [showQR,setShowQR] = useState(false);
   const [showPayment,setShowPayment] = useState(false);
   const [details,setDetails] = useState(false);
   const [otp,setOtp] = useState();
@@ -31,6 +33,8 @@ function SeatBooking() {
     return ve + Math.random().toString(36).substring(2,15) +
          Math.random().toString(36).substring(2,15);
   }
+
+  const scan = useRef();
   const handlePayment = ()=>{
     const transactionId = GenerateTransactionId();
 
@@ -46,11 +50,19 @@ function SeatBooking() {
       pay.current.style.position = "relative"
       pay.current.style.left = "100px";
       setTimeout(() => {
-        alert("Payment Successfully !!!")
         setShowPayment(false);
-        setShowotp(true);
+        setShowQR(true)
       }, 4000);
     }
+  }
+
+  const handleQR = ()=>{
+        scan.current.innerText = "Scanning...."
+        setTimeout(() => {
+        setShowQR(false);
+        setShowotp(true);
+        alert("Payment Successfully !!!")
+        }, 6000);
   }
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -272,7 +284,7 @@ Swal.fire({
         </div>
 
         <div className='Booking-Ticket'>
-          <h2>Make The Payment</h2>
+          <h2>Continue To Booking</h2>
           <div className='count'>Tickets: {count}</div>
           <div className='price'>Total Price: ₹ {totalPrice}</div>
 
@@ -285,7 +297,7 @@ Swal.fire({
               <option>Madya Pradesh</option>
               <option>Other</option>
             </select>
-            <input type='button' onClick = {handleOTP} value='Booking' className='BTN' />
+            <input type='button' onClick = {handleOTP} value='Booking Now' className='BTN' />
             <div className='process' ref={proc} style={{ display: 'none' }}>
               <p>Processing...</p>
             </div>
@@ -453,6 +465,30 @@ Swal.fire({
       
   </>
     }
+
+    {showQR &&
+  <div style={{position: "fixed",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            background: "rgba(0,0,0,0.98)",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",}}>
+    <div style={{height:"500px",width:"600px",background:"white",border:"2px solid white"}} onClick={handleQR}>
+  <div style={{ height: "Auto", margin: "0 auto", maxWidth: 200, width: "100%",border:"5px solid white",marginTop:"100px"}}>
+  <QRCode
+    size={256}
+    style={{ height: "auto", maxWidth: "100%", width: "100%" }}
+    value="hey"
+    viewBox={`0 0 256 256`}
+  />
+</div>
+<h1 style={{position:"relative",left:"210px"}}>Scan & Pay</h1>
+<h2 ref = {scan} style={{position:"relative",left:"230px",color:"blue"}}></h2>
+</div>
+</div>}
       </>
   );
   

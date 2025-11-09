@@ -229,11 +229,11 @@ function Movies() {
   ))}
     </div>
   </div>
-  {play &&
+  {/* {play &&
   <div className="video">
-  <VideoPlayer></VideoPlayer>
+  <VideoPlayer/>
   </div>
-  }
+  } */}
    {play && 
    <VideoPlayer onClose={() => setPlay(false)} />}
     </> 

@@ -82,9 +82,7 @@ function MyMovies() {
         </h1>
 
         {bookedMovies.length === 0 ? (
-          <p
-            style={{
-              position: "relative",
+          <p style={{ position: "relative",
               left: "480px",
               bottom: "50px",
               fontSize: "30px",
@@ -102,7 +100,7 @@ function MyMovies() {
                 color: "AppWorkspace",
               }}
             >
-              Book Your favorite movie{" "}
+              Book Your favorite movie
               <span style={{ color: "yellowgreen", fontWeight: "lighter" }}>
                 Here
               </span>
@@ -113,30 +111,44 @@ function MyMovies() {
             <div
               key={index}
               style={{
-                height: "120px",
+                height: "180px",
                 width: "700px",
-                border: "1px solid #ccc",
+                border: "1px solid black",
                 padding: "30px",
                 marginBottom: "20px",
-                backgroundColor: "white",
+                backgroundColor: "#D8A4A5",
                 borderRadius: "25px",
                 marginLeft: "250px",
                 cursor: "pointer",
               }}
               onClick={() => handleShowDetails(movie)} //  click handler
             >
-              
+          <img
+          src={movie.image}
+          alt={movie.title}
+          style={{
+            width: "120px",
+            height: "150px",
+            objectFit: "cover",
+            borderRadius: "10px",
+            marginBottom: "15px",
+            position:"relative",
+            top:"-15px",
+            right:"20px"
+          }}
+        />
+        <hr />
               <h2
                 style={{
                   position: "relative",
-                  left: "10px",
-                  top: "10px",
+                  left: "120px",
+                  top: "-210px",
                   fontSize: "40px",
+                  color:"black"
                 }}
-              >
+              ><i className="fa-solid fa-film"></i>
                 {movie.title}
               </h2>
-              <hr />
               <div
                 className="moviedetail"
                 style={{ position: "relative", left: "250px", bottom: "150px" }}
@@ -144,10 +156,10 @@ function MyMovies() {
                 
                 <p
                   style={{
-                    color: "slateblue",
+                    color: "darkblue",
                     fontWeight: "bolder",
                     position:"relative",
-                    top:"140px",
+                    top:"40px",
                     right:"250px"
                   }}
                 >
@@ -155,7 +167,7 @@ function MyMovies() {
                 </p>
                 <h3
                   style={{
-                    bottom: "-100px",
+                    bottom: "-5px",
                     left: "300px",
                     position: "relative",
                   }}
@@ -164,14 +176,14 @@ function MyMovies() {
                 </h3>
                 <h3
                   style={{
-                    bottom: "80px",
-                    left: "-230px",
+                    bottom: "155px",
+                    left: "-110px",
                     position: "relative",
-                    color:"green",
+                    color:'darkred'
                     
                   }}
                 >
-                  <p>Total Payed : {movie.price}</p>
+                  <p>Total Payed : ₹{movie.price}</p>
                 </h3>
                
                 <button
@@ -189,7 +201,7 @@ function MyMovies() {
         )}
       </div>
 
-      {/* Show Details Popup */}
+      {/* Show Details Popu */}
       {showDetails && selectedMovie && (
         <>
           <div
@@ -216,7 +228,7 @@ function MyMovies() {
               top: "80px",
               left: "50%",
               transform: "translateX(-50%)",
-              background: "white",
+              background: "gray",
               padding: "20px",
               borderRadius: "10px",
               zIndex: 1000,
@@ -240,13 +252,13 @@ function MyMovies() {
         />
       )}
       <div style={{position:"relative",left:"300px",bottom:"260px",fontSize:"22px"}}>
-            <p style={{position:"relative",right:"-100px",top:"-60px",color:"gray",fontSize:"18px"}}>{selectedMovie.bookingId}</p>
+            <p style={{position:"relative",right:"-100px",top:"-60px",color:"yellow",fontSize:"18px"}}>{selectedMovie.bookingId}</p>
             <p style={{position:"relative",top:"-70px",right:"300px",fontSize:"26px",background:"black",color:"Highlight",fontWeight:"bold",textAlign:"center"}}><i className="fa-solid fa-film"></i> {selectedMovie.title}</p>
             <p style={{position:"relative",top:"120px",fontWeight:"bold"}}><i className="fa-solid fa-chair"></i> Seats: {selectedMovie.seats}</p>
             <p style={{position:"relative",top:"150px",fontWeight:"bold"}}><i className="fa-solid fa-ticket"></i> Mode: {selectedMovie.mode}</p>
             <p style={{position:"relative",top:"-130px",fontWeight:"bold"}}><i className="fa-solid fa-calendar-days"></i> Date: {selectedMovie.date}</p>
             <p style={{position:"relative",top:"-100px",fontWeight:"bold"}}><i className="fa-solid fa-clock"></i> Time: {selectedMovie.time}</p>
-            <div style={{position:"relative",top:"-360px",right:"280px",color:"green"}}> 
+            <div style={{position:"relative",top:"-360px",right:"280px",}}> 
             <input type="checkbox" checked readOnly /> Completed
             </div>
       </div>
