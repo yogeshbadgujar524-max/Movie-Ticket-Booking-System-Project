@@ -20,7 +20,7 @@ function Login({ onLogin }) {
     e.preventDefault();
 
     if (usertype === 'Admin') {
-      if (secretkey === 'Yogu' && email === 'admin1234@gmail.com' && password === '123456') {
+      if (secretkey === 'Admin404' && email === 'admin1234@gmail.com' && password === '123456') {
         localStorage.setItem('isLoggedIn', 'true');
         localStorage.setItem('userType', 'Admin');
         onLogin('Admin');

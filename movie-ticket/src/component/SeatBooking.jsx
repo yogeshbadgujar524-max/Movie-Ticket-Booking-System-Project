@@ -395,7 +395,7 @@ Swal.fire({
             borderRadius: "5px",margin:"10px 0",position:"relative",right:"170px",top:"25px"}}/> Net Banking
         </label>
         <br></br>
-        {Payment === "creditcard" &&
+        {Payment === "Credit Card" &&
         <div id="cardDetails" >
             <label htmlFor="card" style={{ display: "block",marginBottom:"5px",marginLeft:"20px"}}>    &nbsp;Card Number : <br></br>
             <input type="text" id="card" name="card" placeholder="Enter Card Number" style={{ width: "85%",
