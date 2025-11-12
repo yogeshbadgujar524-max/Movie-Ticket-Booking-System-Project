@@ -44,6 +44,7 @@ function AdminBookings() {
         <thead style={{ backgroundColor: "#ddd" }}>
           <tr>
             <th>Booking Id</th>
+            <th>Email</th>
             <th>Movie Name</th>
             <th>Seats</th>
             <th>Total Price</th>
@@ -57,6 +58,7 @@ function AdminBookings() {
             bookings.map((book, index) => (
               <tr key={index}>
                 <td>{book.bookingId}</td>
+                <td>{book.email}</td>
                 <td>{book.title}</td>
                 <td>{book.selectedSeats}</td>
                 <td>{book.totalPrice}</td>

@@ -49,6 +49,7 @@ function Navbar({ isLoggedIn, onLogout }) {
         });
         onLogout();
         localStorage.removeItem('userType');
+        localStorage.removeItem("email");
         navigate('/login');
       }
     });

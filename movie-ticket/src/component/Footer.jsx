@@ -2,7 +2,7 @@ import React, { useRef } from 'react'
 import './Footer.css'
 import { useLocation } from 'react-router-dom';
 
-function Footer(isLoggedIn) {
+function Footer() {
   
   const location = useLocation();
   const myref = useRef();

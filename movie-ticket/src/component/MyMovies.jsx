@@ -8,11 +8,13 @@ import axios from 'axios';
 
 function MyMovies() {
   const { bookedMovies, cancelBooking } = useContext(BookingContext);
+
   const location = useLocation();
 
   const [selectedMovie, setSelectedMovie] = useState(null); // store clicked movie
   const [showDetails, setShowDetails] = useState(false);
 
+  
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location]);
@@ -100,7 +102,7 @@ function MyMovies() {
                 color: "AppWorkspace",
               }}
             >
-              Book Your favorite movie
+              Book Your favorite movie&nbsp;
               <span style={{ color: "yellowgreen", fontWeight: "lighter" }}>
                 Here
               </span>

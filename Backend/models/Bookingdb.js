@@ -7,7 +7,8 @@ const BookingdbSchema = new mongoose.Schema({
     totalPrice: String,
     selectedDate: String,
     selectedTime: String,
-    selectedMode: String
+    selectedMode: String,
+    email:String
 
     // seats,totalPrice,selectedDate,selectedTime,selectedMode
 })

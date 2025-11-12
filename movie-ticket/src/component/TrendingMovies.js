@@ -2,12 +2,12 @@ const TrendingMovies = [
 
     {
     id: 1,
-    title: "120 Bahadur",
+    title: "The Taj Story",
     year: 2025,
-    type: "Action",
-    price: 250,
+    type: "Historic",
+    price: 200,
     category: "Trending",
-    image: "https://upload.wikimedia.org/wikipedia/en/thumb/0/06/120_Bahadur.jpg/250px-120_Bahadur.jpg",
+    image: "https://m.media-amazon.com/images/M/MV5BOTY3NGM0MjYtYWI3MS00MmIxLTk0ZTAtNTI2MWU1OWRlODU5XkEyXkFqcGc@._V1_.jpg",
     desc: `Based on a true story, the film depicts the account of the battle as recollected by an injured soldier, one of the 6 survivors who had participated in the Battle of Rezang La. The film recounts the Battle of Rezang La, considered one of the major events of the Sino-Indian War and fought on 18 November 1962, when 120 soldiers of the Charlie Company, 13 Kumaon Regiment entirely made up of Ahirs, defended their post against a 3000-strong Chinese Army contingent, inflicting on them over 1300 casualties — and make a sacrifice that could change everything.`,
 
     director: "Razneesh Ghai",
@@ -29,19 +29,19 @@ In pre-colonial Karnataka, during the Kadamba dynasty era, the ritual of Bhuta K
     writers: "Rishab Shetty, Anirudh Mahesh, Shanil Guru",
     stars: " Rishab Shetty, Jayaram, Rukmini Vasanth"
   },
-  {
+      {
     id: 3,
-    title: "Housefull 5",
+    title: "120 Bahadur",
     year: 2025,
-    type: "Comedy",
-    price: 190,
+    type: "Action",
+    price: 250,
     category: "Trending",
-    image: "https://m.media-amazon.com/images/M/MV5BY2U5MDY2YjEtYTRjMi00ZmU2LTgwMjEtYjc1NjY4ZDdkYWY4XkEyXkFqcGc@._V1_.jpg",
-    desc: `A chaotic vacation plan sets off a cascade of misunderstandings when five couples, each with their own quirks and secrets, find themselves booked at the same resort. As mistaken identities, romantic mix‑ups, and comic mishaps escalate, the couples race to preserve dignity, love, and sanity. Throw in a meddling manager, hidden agendas, and plenty of slapstick chaos — the result is a riotous, laugh‑out‑loud roller coaster.`,
+    image: "https://upload.wikimedia.org/wikipedia/en/thumb/0/06/120_Bahadur.jpg/250px-120_Bahadur.jpg",
+    desc: `Based on a true story, the film depicts the account of the battle as recollected by an injured soldier, one of the 6 survivors who had participated in the Battle of Rezang La. The film recounts the Battle of Rezang La, considered one of the major events of the Sino-Indian War and fought on 18 November 1962, when 120 soldiers of the Charlie Company, 13 Kumaon Regiment entirely made up of Ahirs, defended their post against a 3000-strong Chinese Army contingent, inflicting on them over 1300 casualties — and make a sacrifice that could change everything.`,
 
-    director: "Farhad Samji",
-    writers: "Anees Bazmee, Farhad Samji",
-    stars: "Akshay Kumar, Kriti Sanon, Riteish Deshmukh"
+    director: "Razneesh Ghai",
+    writers: "Rajiv G Menon",
+    stars: "Farhan Akhtar, Raashii Khanna, Vivan Bhatena, Ankit Siwach"
   },
   {
     id: 4,

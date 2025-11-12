@@ -42,7 +42,8 @@ function SeatBooking() {
       alert("Select Payment Method");
     }
     else{
-      axios.post('http://localhost:3001/Payment',{transactionId,Payment,totalPrice})
+      const useremail = localStorage.getItem("email");
+      axios.post('http://localhost:3001/Payment',{transactionId,Payment,totalPrice,email:useremail})
       .then(result => console.log(result))
       .catch(err =>console.log(err))
 
@@ -171,8 +172,9 @@ function SeatBooking() {
     setShowotp(false);
   e.preventDefault();
   const bookingId = generatedBookingId();
+  const useremail = localStorage.getItem("email");
   
-    axios.post('http://localhost:3001/booking',{title,selectedSeats,totalPrice,selectedDate,selectedTime,selectedMode,bookingId})
+    axios.post('http://localhost:3001/booking',{title,selectedSeats,totalPrice,selectedDate,selectedTime,selectedMode,bookingId,email:useremail})
     .then(result => console.log(result))
     .catch(err =>console.log(err))
 
@@ -342,11 +344,11 @@ Swal.fire({
             <p ref={otpref} style={{position:"relative",top:"25px"}}></p>
             <br></br>
             <h3>Enter OTP : </h3>
-            <input placeholder="Enter OTP" value={otp} onChange={(e) => setOtp(e.target.value)} style={{width: "85%",
+            <input placeholder="Enter OTP"  onChange={(e) => setOtp(e.target.value)} style={{width: "85%",
             padding: "10px",
             border: "1px solid #ccc",
             borderRadius: "5px",margin:"10px 0"}} required/><br></br><br></br>
-          <input type='submit' value="Submit" style={{border:"none",borderRadius:"10px",width:"100px",height:"30px",backgroundColor:"black",color:"white"}}></input>
+          <input type='submit' value="Submit" style={{border:"none",borderRadius:"10px",width:"100px",height:"30px",backgroundColor:"black",color:"white"}} ref={otp}></input>
           </div>
         </div>
         </>
@@ -381,7 +383,7 @@ Swal.fire({
             padding: "20px",
             border: "5px",
             boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)"}}>
-            <h4 style={{color:"red"}}>Total Price : <i class="fa-solid fa-indian-rupee-sign"></i>
+            <h4 style={{color:"red",fontSize:"22px"}}>Total Price : <i className="fa-solid fa-indian-rupee-sign"></i>
 {totalPrice}</h4>
     <h2 style={{textAlign: "center"}}>Select Payment Method</h2>
     <form action="" method="post">
@@ -476,7 +478,7 @@ Swal.fire({
             display: "flex",
             justifyContent: "center",
             alignItems: "center",}}>
-    <div style={{height:"500px",width:"600px",background:"white",border:"2px solid white"}} onClick={handleQR}>
+    <div style={{height:"500px",width:"600px",background:"white",border:"2px solid white",position:"relative",top:"50px"}} onClick={handleQR}>
   <div style={{ height: "Auto", margin: "0 auto", maxWidth: 200, width: "100%",border:"5px solid white",marginTop:"100px"}}>
   <QRCode
     size={256}

@@ -22,8 +22,8 @@ function Movies() {
     
 
    const SlideForward1 = () =>{
-    if(tx > -50){
-      tx -= 12;
+    if(tx > -48){
+      tx -= 14;
     }
     slider.current.style.transform = `translateX(${tx}%)`;
     slider.current.style.transition = '1.8s';
@@ -39,7 +39,7 @@ function Movies() {
   }
 
   const SlideForward2 = () =>{
-    if(tx > -60.1){
+    if(tx > -50.1){
       tx -= 12;
     }
     slider2.current.style.transform = `translateX(${tx}%)`;
@@ -134,7 +134,7 @@ function Movies() {
           {thama}
           <p className='upcomming-title'>Upcomming movie</p>
           <div className='btns'>
-          <button className='btn43'>Book Now</button>
+          <button className='btn43' onClick={()=>{alert("This Movie Is Full Tickets Please wait 5-6 days to booking....")}}>Book Now</button>
           <button className='alt' onClick={()=>setPlay(true)}>Play Trailer</button>
         </div>
         </div>

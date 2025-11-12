@@ -77,7 +77,6 @@ app.get("/booking", async (req, res) => {
 });
 
 
-
 // Delete movie by ID
 app.delete("/booking/:bookingId", async (req, res) => {
   try {

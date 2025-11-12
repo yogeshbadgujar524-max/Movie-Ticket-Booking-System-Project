@@ -4,7 +4,7 @@ import ProtectedRoute from './component/ProtectedRoute';
 import Movies from './component/Movies';
 import Home from './component/Home';
 import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
-import Footer from './component/Footer';
+import FooterWrapper from './component/FooterWrapper';
 import Contact from './component/Contact';
 import SeatBooking from './component/SeatBooking';
 import Register from './component/Register';
@@ -73,8 +73,18 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/Movies" element={<Movies />} />
         <Route path="/Contact" element={<Contact />} />
-        <Route path="/SeatBooking" element={<SeatBooking />} />
-        <Route path="/MyMovies" element={<MyMovies />} />
+
+        {/* Private Routes */}
+        <Route path="/SeatBooking" element={
+            <ProtectedRoute isLoggedIn={isLoggedIn}>
+              <SeatBooking />
+            </ProtectedRoute>
+          } />
+        <Route path="/MyMovies" element={
+            <ProtectedRoute isLoggedIn={isLoggedIn}>
+              <MyMovies />
+            </ProtectedRoute>
+          } />
         <Route path="/Register" element={<Register />} />
         <Route
           path="/Profile"
@@ -111,8 +121,7 @@ function App() {
         {/* Pass handleLogin to Login */}
         <Route path="/Login" element={<Login onLogin={handleLogin} />} />
       </Routes>
-      {isLoggedIn && userType !== "Admin" && 
-      <Footer />}
+      <FooterWrapper />
     </>
   );
 }

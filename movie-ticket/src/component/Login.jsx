@@ -32,19 +32,20 @@ function Login({ onLogin }) {
       try {
         const users = JSON.parse(localStorage.getItem("users")) || [];
 
-        // ⭐ Find user by email and password
+        // Find user by email and password
         const loggedInUser = users.find(u => u.email === email && u.password === password);
 
         if (loggedInUser) {
-          // ⭐ Store current user info for profile page
+          //  Store current user info for profile page
           localStorage.setItem("currentUser", JSON.stringify(loggedInUser));
 
           // Optional: call backend
           await axios.post('http://localhost:3001/login', { email, password });
 
-          // ⭐ Save login status
+          //  Save login status
           localStorage.setItem('isLoggedIn', 'true');
           localStorage.setItem('userType', 'User');
+          localStorage.setItem("email",email);
           onLogin('User');
           navigate('/Profile');
         } else {
