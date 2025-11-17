@@ -1,13 +1,14 @@
-import './SeatBooking.css';
 import React, { useRef, useEffect, useState, useContext, use } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { BookingContext } from './BookingContext';
 import axios, { Axios } from 'axios';
 import Swal from 'sweetalert2';
+import './SeatBooking.css';
 import 'sweetalert2/dist/sweetalert2.min.css';
 import QRCode from 'react-qr-code';
 
 function SeatBooking() {
+  const Otp = useRef();
   const [showQR,setShowQR] = useState(false);
   const [showPayment,setShowPayment] = useState(false);
   const [details,setDetails] = useState(false);
@@ -19,6 +20,7 @@ function SeatBooking() {
   const navigate = useNavigate();
   const { addBooking } = useContext(BookingContext);
   
+
   const { title = 'Unknown', price: moviePrice = 200, image = '' } = location.state || {};
   const pay = useRef();
 
@@ -119,7 +121,7 @@ function SeatBooking() {
       });
     }
     setSeats(generatedSeats);
-  }, [selectedDate]);
+  }, [selectedDate,selectedTime]);
 
 
   // Handle seat selection
@@ -166,11 +168,22 @@ function SeatBooking() {
     setDetails(true)
   }
   }
+
+  const mobileno = useRef();
+  const otppin = useRef();
+
   // Form submission handler
   const submit = (e) => {
 
-    setShowotp(false);
-  e.preventDefault();
+    e.preventDefault();
+    if(mobileno.current.value.length <10){
+      alert("Phone Number must be 10 digits")
+    }
+    else if(otppin.current.value === "" || otppin.current.value.length <6){
+      alert("Please Enter valid otp")
+    }
+    else{
+  setShowotp(false);
   const bookingId = generatedBookingId();
   const useremail = localStorage.getItem("email");
   
@@ -214,6 +227,7 @@ Swal.fire({
     proc.current.innerText = 'Thank you !!';
     pro.current.style.display = "none";
   }, 4000);
+}
 };
 
 
@@ -334,7 +348,7 @@ Swal.fire({
             <h2>OTP Authentications : </h2>
             
             <h3>Phone Number : </h3>
-            <input type = "tel" placeholder="Phone No" required style={{width: "85%",
+            <input type = "tel" placeholder="Phone No" ref={mobileno} required style={{width: "85%",
             padding: "10px",
             border: "1px solid #ccc",
             borderRadius: "5px",margin:"10px 0"}}/><br></br>
@@ -344,11 +358,11 @@ Swal.fire({
             <p ref={otpref} style={{position:"relative",top:"25px"}}></p>
             <br></br>
             <h3>Enter OTP : </h3>
-            <input placeholder="Enter OTP"  onChange={(e) => setOtp(e.target.value)} style={{width: "85%",
+            <input placeholder="Enter OTP"  ref={otppin} onChange={(e) => setOtp(e.target.value)} style={{width: "85%",
             padding: "10px",
             border: "1px solid #ccc",
             borderRadius: "5px",margin:"10px 0"}} required/><br></br><br></br>
-          <input type='submit' value="Submit" style={{border:"none",borderRadius:"10px",width:"100px",height:"30px",backgroundColor:"black",color:"white"}} ref={otp}></input>
+          <input type='submit' value="Submit" style={{border:"none",borderRadius:"10px",width:"100px",height:"30px",backgroundColor:"black",color:"white"}} ref={Otp}/>
           </div>
         </div>
         </>

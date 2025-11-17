@@ -8,8 +8,8 @@ const TrendingMovies = [
     price: 200,
     category: "Trending",
     image: "https://m.media-amazon.com/images/M/MV5BOTY3NGM0MjYtYWI3MS00MmIxLTk0ZTAtNTI2MWU1OWRlODU5XkEyXkFqcGc@._V1_.jpg",
-    desc: `Based on a true story, the film depicts the account of the battle as recollected by an injured soldier, one of the 6 survivors who had participated in the Battle of Rezang La. The film recounts the Battle of Rezang La, considered one of the major events of the Sino-Indian War and fought on 18 November 1962, when 120 soldiers of the Charlie Company, 13 Kumaon Regiment entirely made up of Ahirs, defended their post against a 3000-strong Chinese Army contingent, inflicting on them over 1300 casualties — and make a sacrifice that could change everything.`,
-
+    desc: `The Taj Story generally received negative reviews from the critics.Komal Nahta of Film Information described The Taj Story as “a thought-provoking film and entertaining.”[22] Lachmi Deb Roy of Firstpost gave the film 2 out of 5 stars, calling it “overstretch,” and wrote, “The story had all it needed to make for a good film, but weak script and bad execution massacred it all.”[23] Ritika Srivastav of India Today awarded it 2.5 stars, writing, “The accents are genuinely impressive, and there are flashes of clever use of AI-generated visuals. But none of it compensates for the film’s glaring weaknesses: the lazy writing, the filler female characters, and the total lack of focus.”[24]
+Shubhangi Shah, writing for The Week wrote, "The Taj Story falls flat and not just as a propaganda film, because I can dare even the firm rightwing supporters to sit through this three-hour-long film, which can be a test for both your patience as well as intellect."[25] Saibal Chatterjee, writing for NDTV, rated the movie at 2/5 and concluded, "The Taj Story is a throw of dice that is all over the place. Even Paresh Rawal cannot save it..`,
     director: "Razneesh Ghai",
     writers: "Rajiv G Menon",
     stars: "Farhan Akhtar, Raashii Khanna, Vivan Bhatena, Ankit Siwach"

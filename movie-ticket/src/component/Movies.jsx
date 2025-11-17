@@ -87,7 +87,7 @@ function Movies() {
         <input type='checkbox'/>
         <label>Action</label><br></br>
         <input type='checkbox'/>
-        <label>Cartoon</label><br></br>
+        <label>Anime</label><br></br>
         <input type='checkbox'/>
         <label>Comedy</label><br></br>
         <input type='checkbox'/>
