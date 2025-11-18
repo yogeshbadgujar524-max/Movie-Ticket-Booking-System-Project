@@ -4,3 +4,7 @@ body{
   margin: 0;
   background-color:#1e1f26;
 }
+.Mybutton{
+    padding: 20px;
+    width: 60px;
+}

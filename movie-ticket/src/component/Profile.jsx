@@ -38,11 +38,16 @@ function Profile() {
           title: "Logged out!",
           text: "You have been successfully logged out.",
           icon: "success",
-          timer: 1500,
-          showConfirmButton: false
+          confirmButtonText:'OK',
+          showConfirmButton: true,
+              customClass:{
+              confirmButton:'Mybutton'
+            }
         }).then(() => {
           localStorage.removeItem("isLoggedIn");
+          localStorage.removeItem('userType');
           navigate("/login");
+          
         });
       }
     });

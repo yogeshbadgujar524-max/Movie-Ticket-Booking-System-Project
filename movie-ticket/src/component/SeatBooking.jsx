@@ -219,8 +219,12 @@ Swal.fire({
   position: "center",
   icon: "success",
   title: "Congratulations! You'r Ticket Has Been Booked",
-  showConfirmButton: false,
-  timer: 5000,
+  showConfirmButton: true,
+  confirmButtonText:'OK',
+  confirmButtonColor:'green',
+    customClass:{
+    confirmButton:'Mybutton'
+     }
 });
 
     proc.current.style.color = 'green';

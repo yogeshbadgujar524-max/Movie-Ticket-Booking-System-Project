@@ -43,6 +43,9 @@ function MyMovies() {
             text: "Your movie booking has been cancelled.",
             icon: "success",
             confirmButtonText: "OK",
+            customClass:{
+              confirmButton:'Mybutton'
+            }
           });
         } catch (error) {
           console.error("Error deleting booking:", error);
