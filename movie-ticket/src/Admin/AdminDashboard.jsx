@@ -37,7 +37,15 @@ function AdminDashboard() {
         try {
           await axios.delete(`http://localhost:3001/register/${id}`);
           JSON.parse(localStorage.removeItem("users")) || [];
-          Swal.fire("Deleted!", "User has been deleted.", "success");
+          Swal.fire({
+            title:"Deleted!", 
+            text:"User has been deleted.", 
+            icon:"success",
+            confirmButtonText:"OK",
+            customClass:{
+              confirmButton:'Mybutton'
+            }          
+        });
           fetchUsers(); // refresh list
         } catch (err) {
           console.error("Error deleting user:", err);
@@ -68,7 +76,15 @@ function AdminDashboard() {
   const handleUpdate = async () => {
     try {
       await axios.put(`http://localhost:3001/register/${editingUser}`, formData);
-      Swal.fire("Updated!", "User has been updated.", "success");
+      Swal.fire({
+        title:"Updated!", 
+        text:"User has been updated.",
+        icon: "success",
+        confirmButtonText:"OK",
+        customClass:{
+              confirmButton:'Mybutton'
+            }
+      });
       setEditingUser(null);
       fetchUsers();
     } catch (err) {

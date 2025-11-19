@@ -29,7 +29,8 @@ function Navbar({ isLoggedIn, onLogout }) {
   const trClick = () => window.scrollTo({ top: 865, behavior: 'smooth' });
   const MostwatchClick = () => window.scrollTo({ top: 1565, behavior: 'smooth' });
   const UnderretedClick = () => window.scrollTo({ top: 2265, behavior: 'smooth' });
-  const prologgedin = localStorage.removeItem("isLoggedIn");
+const prologgedin = localStorage.getItem("isLoggedIn");
+
   // Logout Function
   const Logout = () => {
     Swal.fire({
@@ -106,7 +107,7 @@ function Navbar({ isLoggedIn, onLogout }) {
 
         <div className="para1">
           <div className="login">
-            {isLoggedIn && !prologgedin ? (
+            {isLoggedIn && prologgedin ? (
               <button className="logout" onClick={Logout}>
                 <i className="fa-solid fa-right-to-bracket"></i>
               </button>
