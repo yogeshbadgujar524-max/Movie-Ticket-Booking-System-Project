@@ -14,6 +14,21 @@ import VideoPlayer from './VideoPlayer';
 function Movies() {
 
   const [play,setPlay] = useState(false);
+  const [searchTerm, setSearchTerm] = useState("");
+
+  // Merge all movies in one list
+  const allMovies = [
+  ...TrendingMovies,
+  ...MostWatchedMovies,
+  ...UnderratedMovies
+];
+
+// Filter movies by search input
+  const filteredMovies = allMovies.filter(movie =>
+  movie.title.toLowerCase().includes(searchTerm.toLowerCase())
+);
+
+
   const thama = <img src='https://i.ytimg.com/vi/13BMnDiqIIM/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAoXlSSY6Hac0rjrB9NSKk4SXc7Ug' alt = "Thama"></img>
     const slider = useRef();
     const slider2 = useRef();
@@ -139,6 +154,50 @@ function Movies() {
         </div>
         </div>
      </div>
+     <div className="searchbar">
+      <input 
+      type="text" 
+      id="search" 
+      placeholder='Enter the Movie Title'  
+      value={searchTerm}
+      onChange={(e) => setSearchTerm(e.target.value)}
+      />
+      <i className='fa-solid fa-magnifying-glass'></i>
+     </div>
+     {/* SEARCH RESULTS SECTION */}
+{searchTerm.trim() !== "" && (
+  <div className="search-results" style={{height:"1000px"}}>
+
+    <div className="current-movies" style={{ marginBottom: "40px",position:"relative",top:"-20px" }}>
+      {filteredMovies.length > 0 ? (
+        filteredMovies.map((movie, index) => (
+          <div className='current-movie' key={index}>
+            <div className='m-image'>
+              <img src={movie.image} alt={movie.title} />
+            </div>
+
+            <h3 className='m-title'>
+              {movie.title} <i>({movie.year})</i>
+            </h3>
+
+            <p className='type'>Type : {movie.type}</p>
+            <p className='price'>₹ {movie.price}</p>
+
+            <button className='booking'>
+              <Link to={`/movie/${movie.category.toLowerCase().replace(" ","")}/${movie.id}`}>
+                Book Now
+              </Link>
+            </button>
+          </div>
+        ))
+      ) : (
+        <p style={{ padding: "20px" ,position:"relative",bottom:"100px",left:"350px",fontSize:"xx-large",color:"red"}}>No movies found.</p>
+      )}
+    </div>
+  </div>
+)}
+{/* END SEARCH RESULTS */}
+
      <div className='lounch'>
      <h3>Trending Now</h3>
      </div>

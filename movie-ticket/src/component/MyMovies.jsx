@@ -292,4 +292,4 @@ function MyMovies() {
   );
 }
 
-export default MyMovies;
+export default MyMovies;              
