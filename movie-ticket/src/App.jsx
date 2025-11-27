@@ -72,7 +72,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/Movies" element={<Movies />} />
-        <Route path="/Contact" element={<Contact />} />
+        {/* <Route path="/Contact" element={<Contact />} /> */}
 
         {/* Private Routes */}
         <Route path="/SeatBooking" element={
@@ -93,6 +93,12 @@ function App() {
               <Profile />
             </ProtectedRoute>
           }
+        />
+        <Route path='/Contact' element = {
+          <ProtectedRoute isLoggedIn={isLoggedIn}>
+            <Contact />
+          </ProtectedRoute>
+        }
         />
         <Route
           path="/movie/:category/:id"

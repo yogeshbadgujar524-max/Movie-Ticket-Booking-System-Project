@@ -8,7 +8,7 @@ import axios from 'axios';
 
 function MyMovies() {
   const { bookedMovies, cancelBooking } = useContext(BookingContext);
-
+  
   const location = useLocation();
 
   const [selectedMovie, setSelectedMovie] = useState(null); // store clicked movie
@@ -62,6 +62,7 @@ function MyMovies() {
   // When clicking on a movie, show its details
   const handleShowDetails = (movie) => {
     setSelectedMovie(movie);
+    
     setShowDetails(true);
   };
 
@@ -116,7 +117,7 @@ function MyMovies() {
             <div
               key={index}
               style={{
-                height: "180px",
+                height: "150px",
                 width: "700px",
                 border: "1px solid black",
                 padding: "30px",
@@ -128,43 +129,30 @@ function MyMovies() {
               }}
               onClick={() => handleShowDetails(movie)} //  click handler
             >
-          <img
-          src={movie.image}
-          alt={movie.title}
-          style={{
-            width: "120px",
-            height: "150px",
-            objectFit: "cover",
-            borderRadius: "10px",
-            marginBottom: "15px",
-            position:"relative",
-            top:"-15px",
-            right:"20px"
-          }}
-        />
-        <hr />
+              <br></br>
               <h2
                 style={{
                   position: "relative",
-                  left: "120px",
-                  top: "-210px",
+                  left: "20px",
+                  top: "-50px",
                   fontSize: "40px",
                   color:"black"
                 }}
-              ><i className="fa-solid fa-film"></i>
+                ><i className="fa-solid fa-film"></i>
                 {movie.title}
               </h2>
+              <hr/>
               <div
                 className="moviedetail"
                 style={{ position: "relative", left: "250px", bottom: "150px" }}
-              >
+                >
                 
                 <p
                   style={{
                     color: "darkblue",
                     fontWeight: "bolder",
                     position:"relative",
-                    top:"40px",
+                    top:"150px",
                     right:"250px"
                   }}
                 >
@@ -172,7 +160,7 @@ function MyMovies() {
                 </p>
                 <h3
                   style={{
-                    bottom: "-5px",
+                    bottom: "-110px",
                     left: "300px",
                     position: "relative",
                   }}
@@ -181,14 +169,14 @@ function MyMovies() {
                 </h3>
                 <h3
                   style={{
-                    bottom: "155px",
-                    left: "-110px",
+                    bottom: "10px",
+                    left: "-220px",
                     position: "relative",
                     color:'darkred'
                     
                   }}
                 >
-                  <p>Total Payed : ₹{movie.price}</p>
+                  <p>Total Payed : ₹{movie.totalPrice}</p>
                 </h3>
                
                 <button
@@ -228,9 +216,9 @@ function MyMovies() {
           <div
             style={{
               width: "600px",
-              height:"500px",
+              height:"400px",
               position: "fixed",
-              top: "80px",
+              top: "100px",
               left: "50%",
               transform: "translateX(-50%)",
               background: "gray",
@@ -241,29 +229,15 @@ function MyMovies() {
             }}
           >
 
-        {selectedMovie.image && (
-        <img
-          src={selectedMovie.image}
-          alt={selectedMovie.title}
-          style={{
-            width: "250px",
-            height: "300px",
-            objectFit: "cover",
-            borderRadius: "10px",
-            marginBottom: "15px",
-            position:"relative",
-            top:"120px"
-          }}
-        />
-      )}
-      <div style={{position:"relative",left:"300px",bottom:"260px",fontSize:"22px"}}>
+      <div style={{position:"relative",left:"300px",bottom:"-40px",fontSize:"22px"}}>
             <p style={{position:"relative",right:"-100px",top:"-60px",color:"yellow",fontSize:"18px"}}>{selectedMovie.bookingId}</p>
-            <p style={{position:"relative",top:"-70px",right:"300px",fontSize:"26px",background:"black",color:"Highlight",fontWeight:"bold",textAlign:"center"}}><i className="fa-solid fa-film"></i> {selectedMovie.title}</p>
-            <p style={{position:"relative",top:"120px",fontWeight:"bold"}}><i className="fa-solid fa-chair"></i> Seats: {selectedMovie.seats}</p>
-            <p style={{position:"relative",top:"150px",fontWeight:"bold"}}><i className="fa-solid fa-ticket"></i> Mode: {selectedMovie.mode}</p>
-            <p style={{position:"relative",top:"-130px",fontWeight:"bold"}}><i className="fa-solid fa-calendar-days"></i> Date: {selectedMovie.date}</p>
-            <p style={{position:"relative",top:"-100px",fontWeight:"bold"}}><i className="fa-solid fa-clock"></i> Time: {selectedMovie.time}</p>
-            <div style={{position:"relative",top:"-360px",right:"280px",}}> 
+            <p style={{position:"relative",top:"-70px",right:"300px",fontSize:"30px",background:"black",color:"Highlight",fontWeight:"bold",textAlign:"center"}}><i className="fa-solid fa-film"></i> {selectedMovie.title}</p>
+            <p style={{position:"relative",top:"-30px",fontWeight:"bold",right:"250px"}}><i className="fa-solid fa-chair"></i> Seats : {selectedMovie.selectedSeats}</p>
+            <p style={{position:"relative",top:"-10px",fontWeight:"bold",right:"250px"}}><i className="fa-solid fa-ticket"></i> Mode : {selectedMovie.selectedMode}</p>
+            <p style={{position:"relative",top:"-130px",fontWeight:"bold"}}><i className="fa-solid fa-calendar-days"></i> Date : {selectedMovie.selectedDate}</p>
+            <p style={{position:"relative",top:"-100px",fontWeight:"bold"}}><i className="fa-solid fa-clock"></i> Time : {selectedMovie.selectedTime}</p>
+            <p style={{position:"relative",bottom:"80px",right:"150px",color:"AppWorkspace"}}>Booked By : <span style={{color:"brown"}}>{selectedMovie.email}</span></p>
+            <div style={{position:"relative",top:"-410px",right:"280px",}}> 
             <input type="checkbox" checked readOnly /> Completed
             </div>
       </div>
@@ -278,7 +252,7 @@ function MyMovies() {
                   borderRadius: "5px",
                   cursor: "pointer",
                   position:"relative",
-                  bottom:"250px"
+                  bottom:"100px"
                 }}
               >
                 Close

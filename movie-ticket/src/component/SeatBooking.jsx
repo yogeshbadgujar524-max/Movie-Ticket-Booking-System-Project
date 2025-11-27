@@ -21,7 +21,13 @@ function SeatBooking() {
   const { addBooking } = useContext(BookingContext);
   
 
-  const { title = 'Unknown', price: moviePrice = 200, image = '' } = location.state || {};
+
+const movie = location.state || {};
+const title = movie.title || "Unknown";
+const moviePrice = movie.price || 200;
+const image = movie.image || "/default.jpg"; 
+
+
   const pay = useRef();
 
   const handledetails = () =>{
@@ -187,21 +193,31 @@ function SeatBooking() {
   const bookingId = generatedBookingId();
   const useremail = localStorage.getItem("email");
   
-    axios.post('http://localhost:3001/booking',{title,selectedSeats,totalPrice,selectedDate,selectedTime,selectedMode,bookingId,email:useremail})
+    axios.post('http://localhost:3001/booking',{ title,
+    selectedSeats,
+    totalPrice,
+    selectedDate,
+    selectedTime,
+    selectedMode,
+    bookingId,
+    email: useremail,
+    image: image
+})
     .then(result => console.log(result))
     .catch(err =>console.log(err))
 
 
-  const MovieDetails = {
-    bookingId,
-    title,
-    date: selectedDate,
-    time: selectedTime,
-    mode: selectedMode,
-    seats: selectedSeats,
-    price: totalPrice,
-    image: image,
-  };
+const MovieDetails = {
+  bookingId,
+  title,
+  selectedSeats,
+  totalPrice,
+  selectedDate,
+  selectedTime,
+  selectedMode,
+  image
+};
+
 
 
  const storedList = JSON.parse(localStorage.getItem("BookedMoviesList")) || [];
@@ -230,6 +246,7 @@ Swal.fire({
     proc.current.style.color = 'green';
     proc.current.innerText = 'Thank you !!';
     pro.current.style.display = "none";
+    navigate("/MyMovies");
   }, 4000);
 }
 };

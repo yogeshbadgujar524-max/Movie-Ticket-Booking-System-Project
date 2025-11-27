@@ -93,6 +93,51 @@ function Movies() {
 
   return (
     <>
+    <div className="searchbar">
+      <input 
+      type="text" 
+      id="search" 
+      placeholder='Enter the Movie Title'  
+      value={searchTerm}
+      onChange={(e) => setSearchTerm(e.target.value)}
+      />
+      <i className='fa-solid fa-magnifying-glass'></i>
+     </div>
+     {/* SEARCH RESULTS SECTION */}
+{searchTerm.trim() !== "" && (
+  <div className="search-results" style={{height:"1000px"}}>
+
+    <div className="current-movies" style={{ marginBottom: "40px",position:"relative",top:"-20px" }}>
+      {filteredMovies.length > 0 ? (
+        filteredMovies.map((movie, index) => (
+          <div className='current-movie' key={index}>
+            <div className='m-image'>
+              <img src={movie.image} alt={movie.title} />
+            </div>
+
+            <h3 className='m-title'>
+              {movie.title} <i>({movie.year})</i>
+            </h3>
+
+            <p className='type'>Type : {movie.type}</p>
+            <p className='price'>₹ {movie.price}</p>
+
+            <button className='booking'>
+              <Link to={`/movie/${movie.category.toLowerCase().replace(" ","")}/${movie.id}`}>
+                Book Now
+              </Link>
+            </button>
+          </div>
+        ))
+      ) : (
+        <p style={{ padding: "20px" ,position:"relative",bottom:"50px",left:"350px",fontSize:"xx-large",color:"red"}}>No movies found.</p>
+      )}
+    </div>
+  </div>
+)}
+{/* END SEARCH RESULTS */}
+{searchTerm.trim() === "" && 
+<>
     <div className="slider-wrapper">
       <form action="#">
       <div className = "catlog">
@@ -154,50 +199,7 @@ function Movies() {
         </div>
         </div>
      </div>
-     <div className="searchbar">
-      <input 
-      type="text" 
-      id="search" 
-      placeholder='Enter the Movie Title'  
-      value={searchTerm}
-      onChange={(e) => setSearchTerm(e.target.value)}
-      />
-      <i className='fa-solid fa-magnifying-glass'></i>
-     </div>
-     {/* SEARCH RESULTS SECTION */}
-{searchTerm.trim() !== "" && (
-  <div className="search-results" style={{height:"1000px"}}>
-
-    <div className="current-movies" style={{ marginBottom: "40px",position:"relative",top:"-20px" }}>
-      {filteredMovies.length > 0 ? (
-        filteredMovies.map((movie, index) => (
-          <div className='current-movie' key={index}>
-            <div className='m-image'>
-              <img src={movie.image} alt={movie.title} />
-            </div>
-
-            <h3 className='m-title'>
-              {movie.title} <i>({movie.year})</i>
-            </h3>
-
-            <p className='type'>Type : {movie.type}</p>
-            <p className='price'>₹ {movie.price}</p>
-
-            <button className='booking'>
-              <Link to={`/movie/${movie.category.toLowerCase().replace(" ","")}/${movie.id}`}>
-                Book Now
-              </Link>
-            </button>
-          </div>
-        ))
-      ) : (
-        <p style={{ padding: "20px" ,position:"relative",bottom:"100px",left:"350px",fontSize:"xx-large",color:"red"}}>No movies found.</p>
-      )}
-    </div>
-  </div>
-)}
-{/* END SEARCH RESULTS */}
-
+     
      <div className='lounch'>
      <h3>Trending Now</h3>
      </div>
@@ -256,7 +258,6 @@ function Movies() {
     </div>
   ))}
       </div>
-
       <div className='lounch'>
      <h3>Underrated</h3>
      </div>
@@ -284,10 +285,14 @@ function Movies() {
       <button className='booking'><Link to={`/movie/underrated/${movie.id}`}>Book Now</Link>
 
 </button>
+      
     </div>
+
   ))}
     </div>
   </div>
+</>
+}
   {/* {play &&
   <div className="video">
   <VideoPlayer/>

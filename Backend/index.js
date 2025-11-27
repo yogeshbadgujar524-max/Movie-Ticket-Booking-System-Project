@@ -90,6 +90,15 @@ app.delete("/booking/:bookingId", async (req, res) => {
   }
 });
 
+app.get("/booking/user/:email", async (req, res) => {
+  try {
+    const bookings = await BookingdbModel.find({ email: req.params.email });
+    res.json(bookings);
+  } catch (error) {
+    res.status(500).json(error);
+  }
+});
+
 
 
 

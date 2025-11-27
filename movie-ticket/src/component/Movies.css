@@ -127,7 +127,7 @@ input[type="radio"]:checked{
   justify-content: center;
   align-items: center;
   position: relative;
-  bottom: 100px;
+  bottom: 50px;
   left: 100px;
 }
 .searchbar input{
@@ -135,7 +135,12 @@ input[type="radio"]:checked{
   width: 500px;
   font-size: large;
   border: none;
-  border-radius: 10px;
+  border-radius: 15px;
+  color:#1e1f26;
+  font-weight: 550;
+}
+.searchbar input:focus-visible{
+  border:2ps solid #cd8c10;
 }
 .searchbar i{
   position: relative;

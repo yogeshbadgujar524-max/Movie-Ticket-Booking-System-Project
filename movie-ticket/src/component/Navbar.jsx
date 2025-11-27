@@ -97,10 +97,10 @@ const prologgedin = localStorage.getItem("isLoggedIn");
                   </div>
                 )}
               </li>
-
+              {isLoggedIn &&
               <li>
                 <NavLink to="/Contact">Contact</NavLink>
-              </li>
+              </li>}
             </>
           )}
         </ul>
