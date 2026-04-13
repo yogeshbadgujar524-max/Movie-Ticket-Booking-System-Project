@@ -1,94 +1,102 @@
 const MostWatchedMovies = [
   {
     id: 1,
-    title: "Animal : Park",
-    year: 2023,
-    type: "Action / Thriller",
-    price: 170,
+    title: "Kanchana 2",
+    year: 2012,
+    type: "Comedy / Horror",
+    price: 120,
     category: "Most Watched",
-    image: "https://miro.medium.com/v2/resize:fit:1400/1*FovLrh7If7fq1r1gh5oD1A.jpeg",
-    desc: "A gripping action-thriller that delves into the primal instincts of a man entangled in a web of violence, loyalty, and survival. As danger closes in, he must confront both external enemies and his own inner demons.",
-    director: "Sandeep Reddy Vanga",
-    writers: ["Saurabh Gupta", "Sandeep Reddy Vanga"],
-    stars: ["Ranbir Kapoor", "Parineeti Chopra", "Anil Kapoor"]
+    image: "https://tse3.mm.bing.net/th/id/OIP.QfFgwnqn2upZaSdBMHi0qQHaLH?rs=1&pid=ImgDetMain&o=7&rm=3",
+    desc: "A thought-provoking comedy that questions the Indian education system while following three friends through college life, self-discovery, and friendship. A couple of revenge seeking ghosts haunts an innocent man, and the people surrounding him, to get justice for their murders..",
+    director: "Raghava Lawrence",
+    writers: ["Abhijat Joshi"],
+    stars: ["Raghava LawrenceTaapsee , PannuKovai , Sarala"]
   },
+
   {
     id: 2,
-    title: "Kanchana 2",
-    year: 2015,
-    type: "Thriller / Horror",
-    price: 210,
+    title: "Kantara : Chapter 1",
+    year: 2025,
+    type: "Thriller / Action",
+    price: 230,
     category: "Most Watched",
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNkHitirKSn0DAgjSQQ8XlMJqRGy3qdav5Tg&s",
-    desc: "A terrifying blend of horror and comedy where a ghost seeks revenge through an unlikely host. The film explores themes of fear, redemption, and spiritual justice with spine-chilling sequences.",
-    director: "Raghava Lawrence",
-    writers: ["Raghava Lawrence"],
-    stars: ["Raghava Lawrence", "Taapsee Pannu", "Nithya Menen"]
+    image: "https://pbs.twimg.com/profile_images/1974125743417528321/MKYmqUb9_400x400.jpg",
+    desc: `Exploring the origins of Kaadubettu Shiva during the Kadamba dynasty era, it delves into the untamed wilderness and forgotten lore surrounding his past.
+In pre-colonial Karnataka, during the Kadamba dynasty era, the ritual of Bhuta Kola takes root in the culture. Meanwhile, the seeds for the rise of Kaadubettu Shiva are also sown..`,
+
+    director: "Rishab Shetty",
+    writers: "Rishab Shetty, Anirudh Mahesh, Shanil Guru",
+    stars: " Rishab Shetty, Jayaram, Rukmini Vasanth"
   },
-   {
+  {
     id: 3,
-    title: "Bahubali 2",
-    year: 2017,
+    title: "120 Bahadur",
+    year: 2025,
     type: "Action",
-    price: 180,
+    price: 250,
     category: "Most Watched",
-    image: "https://m.media-amazon.com/images/M/MV5BYjAwZWE2NmUtYjFjYy00Y2EyLTg4OTgtNmQ0NTQyY2M0NjE1XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
-    desc: "In ancient India, a couple rescues a baby who will grow up to become the man who will change the course of an old war.",
-    director: "S.s Rajamouli",
-    writers: ["Sekhar Kammula"],
-    stars: "Prabhas (prabhas raju uppala, Rana Daggubati, Anushka Shetty, Tamannaah Bhatia"
+    image: "https://upload.wikimedia.org/wikipedia/en/thumb/0/06/120_Bahadur.jpg/250px-120_Bahadur.jpg",
+    desc: `Based on a true story, the film depicts the account of the battle as recollected by an injured soldier, one of the 6 survivors who had participated in the Battle of Rezang La. The film recounts the Battle of Rezang La, considered one of the major events of the Sino-Indian War and fought on 18 November 1962, when 120 soldiers of the Charlie Company, 13 Kumaon Regiment entirely made up of Ahirs, defended their post against a 3000-strong Chinese Army contingent, inflicting on them over 1300 casualties — and make a sacrifice that could change everything.`,
+
+    director: "Razneesh Ghai",
+    writers: "Rajiv G Menon",
+    stars: "Farhan Akhtar, Raashii Khanna, Vivan Bhatena, Ankit Siwach"
   },
   {
     id: 4,
-    title: "Phir Hera Pheri",
-    year: 2006,
-    type: "Comedy",
-    price: 150,
+    title: "Dhadak 2",
+    year: 2025,
+    type: "Romantic",
+    price: 180,
     category: "Most Watched",
-    image: "https://m.media-amazon.com/images/M/MV5BMTNkZTExMWYtMGZjMy00NGUwLWJmMWEtOThjYmZjY2Q0N2M5XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
-    desc: "The iconic trio is back with their hilarious antics and endless chaos. A wild ride filled with misunderstandings, scams, and laughter as the characters chase a fortune that keeps slipping away.",
-    director: "Neeraj Vora",
-    writers: ["Neeraj Vora", "J. D. Chakravarthy"],
-    stars: ["Akshay Kumar", "Sunil Shetty", "Paresh Rawal"]
+    image: "https://m.media-amazon.com/images/M/MV5BMGMwZTcyM2ItMzgwZC00ZmZkLTgwZjUtZWU0NDUwNTlmMTZlXkEyXkFqcGc@._V1_.jpg",
+    desc: `In the shadow of social pressure and deep‑rooted traditions, two hearts find each other in unexpected places. When their families discover their bond, they mount fierce resistance — forcing the lovers to choose between duty and their dreams. As secrets unravel, sacrifices loom, and the world seems determined to keep them apart, they must fight to prove that true love sometimes defies every obstacle.`,
+
+    director: "Shanaya Kapoor",
+    writers: "Neha Singh, Ritu Verma",
+    stars: "Jhanvi Kapoor, Ishaan Khattar"
   },
   {
     id: 5,
-    title: "Horror Story",
-    year: 2017,
-    type: "Horror",
-    price: 180,
+    title: "Sitaare Zameen Par",
+    year: 2025,
+    type: "Motivational",
+    price: 195,
     category: "Most Watched",
-    image: "https://m.media-amazon.com/images/M/MV5BOGQ2NmMyZDItOTEwNy00YjVkLTllYTUtMTQyOWI5YjhjNjcxXkEyXkFqcGc@._V1_.jpg",
-    desc: "Seven friends spend a night in a haunted hotel and face paranormal horrors beyond imagination. The movie delivers a chilling narrative with jump scares, suspense, and an eerie atmosphere.",
-    director: "Ayush Raina",
-    writers: ["Vikram Bhatt", "Mohan Azad"],
-    stars: ["Karan Kundrra", "Ravish Desai", "Nishant Malkani"]
+    image: "https://upload.wikimedia.org/wikipedia/en/thumb/4/44/Sitaare_Zameen_Par_poster.jpg/250px-Sitaare_Zameen_Par_poster.jpg",
+    desc: `A beacon of hope shines when a struggling child, burdened by academic failure and low confidence, crosses paths with an unconventional yet passionate teacher. Through patience, empathy, and creative teaching, the mentor helps unveil the child’s hidden talents and inner light. Their journey is not without setbacks — but each hurdle becomes an opportunity to see beyond mistakes and celebrate potential.`,
+
+    director: "Nikhil Sharma",
+    writers: "Meera Gupta, Arjun Malhotra",
+    stars: "Aamir Khan, Zaira Wasim, Tanvi Rao"
   },
   {
     id: 6,
-    title: "Fidaa",
-    year: 2018,
-    type: "Love / Drama",
-    price: 140,
+    title: "Metro In Dino",
+    year: 2025,
+    type: "Romantic",
+    price: 180,
     category: "Most Watched",
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmdRf5hNQJfS1JPFWD4vAaptVSYEUE6Pe_tA&s",
-    desc: "A tender love story between a spirited village girl and an NRI that explores cultural differences, emotional conflicts, and heartfelt romance. A tale of love that transcends distances.",
-    director: "Sekhar Kammula",
-    writers: ["Sekhar Kammula"],
-    stars: ["Varun Tej", "Sai Pallavi"]
+    image: "https://upload.wikimedia.org/wikipedia/en/6/64/Metro..._In_Dino_poster.jpg",
+    desc: `Amid the hum of passing commuters and crowded platforms, two strangers share a fleeting journey on a metro. A single conversation, a shared smile, becomes the spark for deeper connection. As the train winds through city tunnels and daylight fades, they are drawn into each other’s stories — and by journey’s end, life may never be the same.`,
+
+    director: "Pooja Shetty",
+    writers: "Ankita Mehra, Rohan Joshi",
+    stars: "Vijay Deverakonda, Sara Ali Khan"
   },
   {
     id: 7,
-    title: "Kanchana",
-    year: 2011,
-    type: "Horror",
-    price: 200,
+    title: "Saiyaara",
+    year: 2025,
+    type: "Romantic",
+    price: 210,
     category: "Most Watched",
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvGgGXYAuz23ayR-QedY0JsXmn8ajUVm4DPA&s",
-    desc: "A horror-comedy that follows a man possessed by a vengeful spirit. The movie blends slapstick humor with genuine scares and highlights social issues in a unique way.",
-    director: "Raghava Lawrence",
-    writers: ["Raghava Lawrence"],
-    stars: ["Raghava Lawrence", "Sarathkumar", "Lakshmi Rai"]
+    image: "https://m.media-amazon.com/images/M/MV5BMTk2ZmFhYjctYWZiYy00N2IxLWEzMWItZGRiMDY4ZDQwZWFlXkEyXkFqcGc@._V1_.jpg",
+    desc: `In the quiet corners of a rain-slicked city, an introspective artist and a wandering poet cross paths. Their conversations wander through dreams, heartbreak, and creative yearning. As their bond deepens, memories resurface and doubts arise — but sometimes, in vulnerability, we find courage and in shared silence, we find solace.`,
+
+    director: "Ritik Mehra",
+    writers: "Sonal Verma, Kabir Shah",
+    stars: "Ishaan Khatter, Tara Sutaria"
   },
   {
     id: 8,
@@ -141,18 +149,21 @@ const MostWatchedMovies = [
     director: "Rajkumar Hirani",
     writers: ["Abhijat Joshi"]
   },
+
   {
     id: 12,
-    title: "3 BHK",
-    year: 2024,
-    type: "Family",
-    price: 130,
+    title: "The Taj Story",
+    year: 2025,
+    type: "Historic",
+    price: 200,
     category: "Most Watched",
-    image: "https://m.media-amazon.com/images/M/MV5BZTU0ODU1MjgtZmY0OC00Njc2LWFhY2YtZWU2MDk1YThkMzkxXkEyXkFqcGc@._V1_.jpg",
-    desc: "A heartfelt story of a middle-class family moving into a dream home, only to discover that true comfort lies in emotional bonds rather than material spaces. A touching portrayal of relationships and aspirations.",
-    director: "Vikram Mehra",
-    writers: ["Anjali Nair", "Vikram Mehra"],
-    stars: ["Neena Gupta", "Rajkummar Rao", "Amrita Subhash"]
+    image: "https://m.media-amazon.com/images/M/MV5BOTY3NGM0MjYtYWI3MS00MmIxLTk0ZTAtNTI2MWU1OWRlODU5XkEyXkFqcGc@._V1_.jpg",
+    desc: `The Taj Story generally received negative reviews from the critics.Komal Nahta of Film Information described The Taj Story as “a thought-provoking film and entertaining.”[22] Lachmi Deb Roy of Firstpost gave the film 2 out of 5 stars, calling it “overstretch,” and wrote, “The story had all it needed to make for a good film, but weak script and bad execution massacred it all.”[23] Ritika Srivastav of India Today awarded it 2.5 stars, writing, “The accents are genuinely impressive, and there are flashes of clever use of AI-generated visuals. But none of it compensates for the film’s glaring weaknesses: the lazy writing, the filler female characters, and the total lack of focus.”[24]
+Shubhangi Shah, writing for The Week wrote, "The Taj Story falls flat and not just as a propaganda film, because I can dare even the firm rightwing supporters to sit through this three-hour-long film, which can be a test for both your patience as well as intellect."[25] Saibal Chatterjee, writing for NDTV, rated the movie at 2/5 and concluded, "The Taj Story is a throw of dice that is all over the place. Even Paresh Rawal cannot save it..`,
+    director: "Razneesh Ghai",
+    writers: "Rajiv G Menon",
+    stars: "Farhan Akhtar, Raashii Khanna, Vivan Bhatena, Ankit Siwach"
   },
-    ]
-    export default MostWatchedMovies
+  
+]
+export default MostWatchedMovies

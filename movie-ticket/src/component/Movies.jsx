@@ -1,4 +1,4 @@
-import React, { useEffect, useRef,useState } from 'react'
+import React, { useContext, useEffect, useRef,useState } from 'react'
 import { useLocation } from 'react-router-dom';
 import './Movies.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
@@ -8,6 +8,7 @@ import MostWatchedMovies from './MostWatchedMovies';
 import UnderratedMovies from './UnderratedMovies';
 import { useNavigate } from 'react-router-dom';
 import VideoPlayer from './VideoPlayer';
+import { BookingContext } from './BookingContext';
 
 // https://i.ytimg.com/vi/tPlRgVCeBT8/maxresdefault.jpg
 
@@ -15,6 +16,7 @@ function Movies() {
 
   const [play,setPlay] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
+  const {setDrop} = useContext(BookingContext);
 
   // Merge all movies in one list
   const allMovies = [
@@ -29,7 +31,7 @@ function Movies() {
 );
 
 
-  const thama = <img src='https://i.ytimg.com/vi/13BMnDiqIIM/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAoXlSSY6Hac0rjrB9NSKk4SXc7Ug' alt = "Thama"></img>
+  const bhootbanglow = <img src='https://assets-in.bmscdn.com/discovery-catalog/events/et00411383-tpdjlgfwyz-landscape.jpg' alt = "Bhoth Banglow"></img>
     const slider = useRef();
     const slider2 = useRef();
     const slider3 = useRef();
@@ -138,7 +140,7 @@ function Movies() {
 {/* END SEARCH RESULTS */}
 {searchTerm.trim() === "" && 
 <>
-    <div className="slider-wrapper">
+    <div className="slider-wrapper" onClick={()=>setDrop(false)}>
       <form action="#">
       <div className = "catlog">
         <h3>Categories</h3>
@@ -191,10 +193,10 @@ function Movies() {
       </form>
       <div className = "main-movie">
         <div className='img'>
-          {thama}
+          {bhootbanglow}
           <p className='upcomming-title'>Upcomming movie</p>
           <div className='btns'>
-          <button className='btn43' onClick={()=>{alert("This Movie Is Full Tickets Please wait 5-6 days to booking....")}}>Book Now</button>
+          <button className='btn43' onClick={()=>{alert("This Movie Is Not Released Please wait 5-6 days for booking....")}}>Book Now</button>
           <button className='alt' onClick={()=>setPlay(true)}>Play Trailer</button>
         </div>
         </div>

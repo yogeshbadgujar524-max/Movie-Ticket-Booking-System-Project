@@ -5,6 +5,8 @@ export const BookingContext = createContext();
 
 export const BookingProvider = ({ children }) => {
   const [bookedMovies, setBookedMovies] = useState([]);
+  const [bookedNotification,setBookedNotification] = useState(false);
+  const [drop, setDrop] = useState(false);
 
   // Load bookings from DB
   useEffect(() => {
@@ -15,6 +17,7 @@ export const BookingProvider = ({ children }) => {
       .then(res => setBookedMovies(res.data))
       .catch(err => console.log(err));
   }, []);
+
 
   // Add booking to list
   const addBooking = (movie) => {
@@ -27,7 +30,7 @@ export const BookingProvider = ({ children }) => {
   };
 
   return (
-    <BookingContext.Provider value={{ bookedMovies, addBooking, cancelBooking }}>
+    <BookingContext.Provider value={{ bookedMovies, addBooking, cancelBooking,bookedNotification,setBookedNotification,drop,setDrop }}>
       {children}
     </BookingContext.Provider>
   );

@@ -98,7 +98,7 @@ function AdminDashboard() {
       <h2
         style={{
           position: "relative",
-          left: "500px",
+          left: "550px",
           color: "ButtonShadow",
           fontSize: "30px",
         }}

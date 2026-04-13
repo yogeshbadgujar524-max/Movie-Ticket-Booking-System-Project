@@ -46,13 +46,13 @@ function Home() {
     </div>
     <div className='Home-movies'>
       <div className='home-main-movie'>
-        <img src='https://i.ytimg.com/vi/WVTnxhH_EQ8/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBxSNBJyhoXXcNgtF6b_ksPqc7qhA'></img>
+        <img src='https://static.toiimg.com/thumb/resizemode-4,width-1280,height-720,msid-126268362/126268362.jpg'></img>
         <div className='black'></div>
-        <h2>Thama</h2>
-        <div className="dir">
+        <h2>The Kerala Story 2</h2>
         <p>Things get complicated when Kabir Dhaliwal,a secret agent, <br/> is accused of betraying his nation and his former batchmate <br/> Vikram is assigned the task of finding him.</p>
+        <div className="dir">
         <marquee>
-          Director : Ayan Mukerji &nbsp; Writers : Aditya ChopraShridhar RaghavanAbbas Tyrewala &nbsp; Stars : Hrithik RoshanN.T. Rama Rao Jr.Kiara Advani</marquee>
+          Director : Sudipto Sen &nbsp; Writers : Sudipto Sen, Suryapal Singh &nbsp; Stars : Adah Sharma, Yogita Bihani, Sonia Balani</marquee>
       </div>
       </div>
       <br></br>

@@ -1,106 +1,81 @@
 const TrendingMovies = [
 
-    {
+  {
     id: 1,
-    title: "The Taj Story",
-    year: 2025,
-    type: "Historic",
-    price: 200,
+    title: "The Kerala Story 3",
+    year: 2026,
+    type: "Drama / Thriller",
+    price: 210,
     category: "Trending",
-    image: "https://m.media-amazon.com/images/M/MV5BOTY3NGM0MjYtYWI3MS00MmIxLTk0ZTAtNTI2MWU1OWRlODU5XkEyXkFqcGc@._V1_.jpg",
-    desc: `The Taj Story generally received negative reviews from the critics.Komal Nahta of Film Information described The Taj Story as “a thought-provoking film and entertaining.”[22] Lachmi Deb Roy of Firstpost gave the film 2 out of 5 stars, calling it “overstretch,” and wrote, “The story had all it needed to make for a good film, but weak script and bad execution massacred it all.”[23] Ritika Srivastav of India Today awarded it 2.5 stars, writing, “The accents are genuinely impressive, and there are flashes of clever use of AI-generated visuals. But none of it compensates for the film’s glaring weaknesses: the lazy writing, the filler female characters, and the total lack of focus.”[24]
-Shubhangi Shah, writing for The Week wrote, "The Taj Story falls flat and not just as a propaganda film, because I can dare even the firm rightwing supporters to sit through this three-hour-long film, which can be a test for both your patience as well as intellect."[25] Saibal Chatterjee, writing for NDTV, rated the movie at 2/5 and concluded, "The Taj Story is a throw of dice that is all over the place. Even Paresh Rawal cannot save it..`,
-    director: "Razneesh Ghai",
-    writers: "Rajiv G Menon",
-    stars: "Farhan Akhtar, Raashii Khanna, Vivan Bhatena, Ankit Siwach"
+    image: "https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/the-kerala-story-2-goes-beyond-et00484171-1770209319.jpg",
+    desc: `Continuing the controversial narrative, the story follows the lives of young women whose journeys take unexpected turns due to radical influences and political manipulation. 
+The film explores social conflict, personal identity, and the consequences of extremism through intense and emotional storytelling.`,
+    director: "Sudipto Sen",
+    writers: "Sudipto Sen, Suryapal Singh",
+    stars: "Adah Sharma, Yogita Bihani, Sonia Balani"
   },
+
   {
     id: 2,
-    title: "Kantara : Chapter 1",
-    year: 2025,
-    type: "Thriller / Action",
-    price: 230,
+    title: "Dhurandar 2",
+    year: 2026,
+    type: "Action / Thriller",
+    price: 220,
     category: "Trending",
-    image: "https://pbs.twimg.com/profile_images/1974125743417528321/MKYmqUb9_400x400.jpg",
-    desc: `Exploring the origins of Kaadubettu Shiva during the Kadamba dynasty era, it delves into the untamed wilderness and forgotten lore surrounding his past.
-In pre-colonial Karnataka, during the Kadamba dynasty era, the ritual of Bhuta Kola takes root in the culture. Meanwhile, the seeds for the rise of Kaadubettu Shiva are also sown..`,
-
-    director: "Rishab Shetty",
-    writers: "Rishab Shetty, Anirudh Mahesh, Shanil Guru",
-    stars: " Rishab Shetty, Jayaram, Rukmini Vasanth"
+    image: "https://images.news18.com/ibnlive/uploads/2025/12/Dhurandhar-2-2025-12-70ea0438f4942e7226847a93e05f76b2.webp",
+    desc: `A fearless intelligence officer uncovers a massive conspiracy threatening national security. 
+As enemies close in from every direction, he must rely on his instincts and combat skills to expose the truth and protect the country.`,
+    director: "Aditya Dhar",
+    writers: "Aditya Dhar",
+    stars: "Ranveer Singh, R. Madhavan, Akshaye Khanna"
   },
-      {
+
+  {
     id: 3,
-    title: "120 Bahadur",
-    year: 2025,
-    type: "Action",
+    title: "Border 2 : The action war",
+    year: 2026,
+    type: "War / Action / Drama",
     price: 250,
     category: "Trending",
-    image: "https://upload.wikimedia.org/wikipedia/en/thumb/0/06/120_Bahadur.jpg/250px-120_Bahadur.jpg",
-    desc: `Based on a true story, the film depicts the account of the battle as recollected by an injured soldier, one of the 6 survivors who had participated in the Battle of Rezang La. The film recounts the Battle of Rezang La, considered one of the major events of the Sino-Indian War and fought on 18 November 1962, when 120 soldiers of the Charlie Company, 13 Kumaon Regiment entirely made up of Ahirs, defended their post against a 3000-strong Chinese Army contingent, inflicting on them over 1300 casualties — and make a sacrifice that could change everything.`,
-
-    director: "Razneesh Ghai",
-    writers: "Rajiv G Menon",
-    stars: "Farhan Akhtar, Raashii Khanna, Vivan Bhatena, Ankit Siwach"
+    image: "https://upload.wikimedia.org/wikipedia/en/thumb/2/26/Border_2_Poster.jpg/250px-Border_2_Poster.jpg",
+    desc: `Inspired by the real-life clash in the Galwan Valley, the film tells the heroic story of Indian soldiers defending the nation under extreme conditions. 
+It captures the courage, sacrifice, and brotherhood of soldiers who stood their ground against overwhelming odds.`,
+    director: "Anurag Singh",
+    writers: "Anurag Singh, Nidhi Dutta",
+    stars: "Sunny Deol, Ayushmann Khurrana, Varun Dhawan"
   },
+
   {
     id: 4,
-    title: "Dhadak 2",
-    year: 2025,
-    type: "Romantic",
-    price: 180,
+    title: "King",
+    year: 2026,
+    type: "Action / Crime / Thriller",
+    price: 240,
     category: "Trending",
-    image: "https://m.media-amazon.com/images/M/MV5BMGMwZTcyM2ItMzgwZC00ZmZkLTgwZjUtZWU0NDUwNTlmMTZlXkEyXkFqcGc@._V1_.jpg",
-    desc: `In the shadow of social pressure and deep‑rooted traditions, two hearts find each other in unexpected places. When their families discover their bond, they mount fierce resistance — forcing the lovers to choose between duty and their dreams. As secrets unravel, sacrifices loom, and the world seems determined to keep them apart, they must fight to prove that true love sometimes defies every obstacle.`,
-
-    director: "Shanaya Kapoor",
-    writers: "Neha Singh, Ritu Verma",
-    stars: "Jhanvi Kapoor, Ishaan Khattar"
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT014lPhglKBIGXCxbyoZF7DN-CBKdAGGx4tw&s",
+    desc: `A powerful crime thriller that follows the rise of a mysterious underworld figure known only as "King". 
+As rivals, police forces, and betrayals surround him, the battle for dominance in the criminal empire becomes a dangerous game of power and survival.`,
+    director: "Siddharth Anand",
+    writers: "Siddharth Anand",
+    stars: "Shah Rukh Khan, Suhana Khan, Abhishek Bachchan"
   },
+
   {
     id: 5,
-    title: "Sitaare Zameen Par",
-    year: 2025,
-    type: "Motivational",
-    price: 195,
+    title: "Ustaad Bhagat Singh",
+    year: 2026,
+    type: "Action / Drama",
+    price: 220,
     category: "Trending",
-    image: "https://upload.wikimedia.org/wikipedia/en/thumb/4/44/Sitaare_Zameen_Par_poster.jpg/250px-Sitaare_Zameen_Par_poster.jpg",
-    desc: `A beacon of hope shines when a struggling child, burdened by academic failure and low confidence, crosses paths with an unconventional yet passionate teacher. Through patience, empathy, and creative teaching, the mentor helps unveil the child’s hidden talents and inner light. Their journey is not without setbacks — but each hurdle becomes an opportunity to see beyond mistakes and celebrate potential.`,
-
-    director: "Nikhil Sharma",
-    writers: "Meera Gupta, Arjun Malhotra",
-    stars: "Aamir Khan, Zaira Wasim, Tanvi Rao"
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTz2r463fkNav4eq7hCAk-gzRgdUr8LwLmvIQ&s",
+    desc: `A group of friends visit an old haunted mansion rumored to be cursed. 
+What begins as a fun adventure quickly turns into a hilarious and terrifying experience as strange supernatural events begin unfolding inside the mysterious bungalow.`,
+    director: "Harish Shankar",
+    writers: "Priyadarshan, Naveen Yerneni",
+    stars: "Pavan Kalyan, Sakshi Vaidya, Sreeleela,Pooja Hegde,Rashii Khanna"
   },
   {
     id: 6,
-    title: "Metro In Dino",
-    year: 2025,
-    type: "Romantic",
-    price: 180,
-    category: "Trending",
-    image: "https://upload.wikimedia.org/wikipedia/en/6/64/Metro..._In_Dino_poster.jpg",
-    desc: `Amid the hum of passing commuters and crowded platforms, two strangers share a fleeting journey on a metro. A single conversation, a shared smile, becomes the spark for deeper connection. As the train winds through city tunnels and daylight fades, they are drawn into each other’s stories — and by journey’s end, life may never be the same.`,
-
-    director: "Pooja Shetty",
-    writers: "Ankita Mehra, Rohan Joshi",
-    stars: "Vijay Deverakonda, Sara Ali Khan"
-  },
-  {
-    id: 7,
-    title: "Saiyaara",
-    year: 2025,
-    type: "Romantic",
-    price: 210,
-    category: "Trending",
-    image: "https://m.media-amazon.com/images/M/MV5BMTk2ZmFhYjctYWZiYy00N2IxLWEzMWItZGRiMDY4ZDQwZWFlXkEyXkFqcGc@._V1_.jpg",
-    desc: `In the quiet corners of a rain-slicked city, an introspective artist and a wandering poet cross paths. Their conversations wander through dreams, heartbreak, and creative yearning. As their bond deepens, memories resurface and doubts arise — but sometimes, in vulnerability, we find courage and in shared silence, we find solace.`,
-
-    director: "Ritik Mehra",
-    writers: "Sonal Verma, Kabir Shah",
-    stars: "Ishaan Khatter, Tara Sutaria"
-  },
-  {
-    id: 8,
     title: "Sanam Teri Kasam 2",
     year: 2025,
     type: "Romantic / Sad",
@@ -114,33 +89,64 @@ In pre-colonial Karnataka, during the Kadamba dynasty era, the ritual of Bhuta K
     stars: "Sidharth Malhotra, Tara Sutaria"
   },
   {
-    id: 9,
-    title: "San of Sardar 2",
-    year: 2025,
-    type: "Action",
-    price: 215,
-    category: "Trending",
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVgcgEsyeOpX4o3tlJNAzzbn0JbMYuEDZCGw&s",
-    desc: `Haunted by his father’s legacy, San embarks on a relentless crusade to avenge injustice against his family. When ruthless gangs, corrupt officials, and long‑buried secrets collide, San must draw strength from alliances and sacrifice everything. In a world of betrayals and hidden enemies, he fights not just for revenge — but for redemption and honor.`,
+  id: 7,
+  title: "Animal Park",
+  year: 2023,
+  type: "Action / Crime / Drama",
+  price: 260,
+  category: "Trending",
+  image: "https://i.redd.it/bngithurymyd1.jpeg",
+  desc: `The sequel to Animal continues the intense story of a ruthless man navigating power, revenge, and family loyalty. 
+As new enemies rise and darker secrets surface, the battle for dominance becomes more brutal than ever.`,
+  director: "Sandeep Reddy Vanga",
+  writers: "Sandeep Reddy Vanga",
+  stars: "Ranbir Kapoor, Rashmika Mandanna, Bobby Deol"
+},
 
-    director: "Rajiv Mehra",
-    writers: "Gautam Bhargava, Nikhil Verma",
-    stars: "Diljit Dosanjh, Kiara Advani"
-  },
-  {
-    id: 10,
-    title: "Drishyam 2",
-    year: 2022,
-    type: "Crime / Thriller",
-    price: 240,
-    category: "Trending",
-    image: "https://upload.wikimedia.org/wikipedia/en/9/9e/Drishyam_2_2022_film_poster.jpg",
-    desc: `Seven years after his family’s life was turned upside down by a crime, Vijay emerges as a capable, cautious man, living in the shadows of suspicion. But the past has a way of catching up — when new investigators reopen the case, buried truths begin surfacing. In a tense game of mind and will, Vijay must use every resource, cunning, and protective instinct to shield his family from legal and moral peril. The lines between guilt and innocence blur as the chase intensifies.`,
+{
+  id: 8,
+  title: "Pushpa 3 : The Rampage",
+  year: 2027,
+  type: "Action / Thriller",
+  price: 270,
+  category: "Trending",
+  image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9hIO18sJoNsgrOEUVCAkattFf6ieUuWf85w&s",
+  desc: `Pushpa Raj returns more powerful than ever, facing new enemies and political threats while expanding his red sandalwood empire. 
+The story explores loyalty, betrayal, and the rise of a man who refuses to bow to anyone.`,
+  director: "Sukumar",
+  writers: "Sukumar",
+  stars: "Allu Arjun, Rashmika Mandanna, Fahadh Faasil"
+},
 
-    director: "Abhishek Pathak",
-    writers: "Upendra Sidhaye, Shridhar Raghavan",
-    stars: "Ajay Devgn, Tabu, Akshaye Khanna"
-  }
+{
+  id: 9,
+  title: "War 2",
+  year: 2025,
+  type: "Action / Spy / Thriller",
+  price: 250,
+  category: "Trending",
+  image: "https://m.media-amazon.com/images/M/MV5BY2U0MGFkNzctOGI5OC00MzhhLWExYTctZjE5YjY3MzcwYjMzXkEyXkFqcGc@._V1_.jpg",
+  desc: `A high-octane spy thriller where two elite agents must join forces to stop a global threat. 
+Packed with intense action sequences and international missions, the film pushes the limits of espionage and loyalty.`,
+  director: "Ayan Mukerji",
+  writers: "Aditya Chopra",
+  stars: "Hrithik Roshan, Jr. NTR, Kiara Advani"
+},
+
+{
+  id: 10,
+  title: "Singham Again",
+  year: 2025,
+  type: "Action / Crime",
+  price: 240,
+  category: "Trending",
+  image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLIoSRG80xRoKi8NK2nvCdSx6eiCtaB-LzjA&s",
+  desc: `Bajirao Singham returns to fight a powerful criminal network threatening the country's security. 
+With courage, justice, and fearless action, he leads a team determined to destroy corruption.`,
+  director: "Rohit Shetty",
+  writers: "Yunus Sajawal",
+  stars: "Ajay Devgn, Kareena Kapoor, Deepika Padukone"
+}
 ];
 
 export default TrendingMovies;

@@ -1,14 +1,15 @@
 import { Link, NavLink, useNavigate } from 'react-router-dom';
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useContext } from 'react';
 import Swal from 'sweetalert2';
 import 'sweetalert2/dist/sweetalert2.min.css';
 import './Navbar.css';
+import { BookingContext } from './BookingContext';
 
 function Navbar({ isLoggedIn, onLogout }) {
   const navigate = useNavigate();
   const [sticky, setSticky] = useState(false);
-  const [drop, setDrop] = useState(false);
   const [isAdmin, setIsAdmin] = useState(false);
+  const {drop,setDrop} = useContext(BookingContext);
 
   // Update admin state when login or userType changes
   useEffect(() => {
@@ -23,8 +24,8 @@ function Navbar({ isLoggedIn, onLogout }) {
   }, []);
 
   // Dropdown Toggle
-  const toggleDropdown = () => setDrop((prev) => !prev);
-
+  const toggleDropdown = () => setDrop(true);
+  
   // Smooth Scroll Handlers
   const trClick = () => window.scrollTo({ top: 865, behavior: 'smooth' });
   const MostwatchClick = () => window.scrollTo({ top: 1565, behavior: 'smooth' });
@@ -64,7 +65,8 @@ const prologgedin = localStorage.getItem("isLoggedIn");
     <div className="head">
       <nav className={sticky ? 'change' : ''}>
         <ul>
-          <h2>M4You</h2>
+          {!isAdmin ?
+          <h2>M4You</h2>:<h2 style={{marginLeft:"100px",color:"yellowgreen"}}>Admin Site</h2>}
 
           {isAdmin ? (
             <>
@@ -74,6 +76,9 @@ const prologgedin = localStorage.getItem("isLoggedIn");
             </li>
             <li>
               <NavLink to="/userbookings">Bookings</NavLink>
+            </li>
+            <li>
+              <NavLink to="/userqueries">Contacts Details</NavLink>
             </li>
             </div>
             </>

@@ -15,6 +15,7 @@ import Profile from './component/Profile';
 import AdminDashboard from './Admin/AdminDashboard';
 import AdminBookings from './Admin/AdminBookings';
 import { BookingProvider } from './component/BookingContext';
+import UserQueries from './Admin/UserQueries';
 
 function AppWrapper() {
   return (
@@ -121,6 +122,14 @@ function App() {
           element={
             <ProtectedRoute isLoggedIn={isLoggedIn}>
               <AdminBookings />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/userqueries"
+          element={
+            <ProtectedRoute isLoggedIn={isLoggedIn}>
+              <UserQueries />
             </ProtectedRoute>
           }
         />

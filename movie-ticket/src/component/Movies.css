@@ -56,7 +56,7 @@ input[type="radio"]:checked{
 }
 .main-movie{
   height: 710px;
-  width: 1000px;
+  width: 1180px;
   overflow: hidden;
   border:2px solid transparent;
   position: absolute;
@@ -159,10 +159,11 @@ input[type="radio"]:checked{
   color:whitesmoke;
   font-size:35px;
 }
-.slider-wrapper {
-  overflow: hidden;
+.slider-wrapper{
   width: 100%;
   position: relative;
+  overflow: hidden;
+  margin-bottom: 40px;
 }
 .current-movies{
   position: relative;
@@ -179,31 +180,32 @@ input[type="radio"]:checked{
 }
 .right{
   position: relative;
-  left: 1300px;
-  top:100px;
+  left: 1430px;
+  top:-166px;
   z-index: 10;
   width: 40px;
   font-size: xx-large;
-  border: 2px solid transparent;
-  background-color:rgba(0, 0, 0, 0.276);
+  border: 1px solid transparent;
+  background-color:rgba(255, 255, 255, 0.226);
   color: white;
   border-radius: 50%;
-  background-color:#1e1f26;
+  
 }
 .right:hover{
   background-color:dodgerblue;
   font-weight: 600;
 }
 .left{
+  background-color:rgba(255, 255, 255, 0.226);
   position: relative;
-  left: 250px;
-  top:70px;
+  left: 1350px;
+  top:-206px;
   z-index: 10;
   width: 40px;
   font-size: xx-large;
-  border: 2px solid transparent;
+  border: 1px solid transparent;
   border-radius: 50%;
-  background-color:#1e1f26;
+  
   color: wheat;
 
 }
@@ -307,7 +309,9 @@ img{
 }
 .m-image img{
   height: 250px;
-  width: auto;
+  width: 95%;
+  object-fit:fill;
+  object-position:top;
   border-bottom: 1rem;
   border-radius: 20px;
 }
@@ -365,7 +369,9 @@ img{
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 105%;
+  margin-left: 100px;
+  margin-top: -10px;
   background: rgba(0,0,0,0.5);
   display: flex;
   justify-content: center;

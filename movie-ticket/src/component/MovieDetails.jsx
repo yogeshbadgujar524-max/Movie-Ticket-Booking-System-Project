@@ -1,7 +1,5 @@
 import { Link, useParams, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
-import "./Profile.css"
-
 import trendingMovies from './TrendingMovies';
 import mostWatchedMovies from './MostWatchedMovies';
 import underratedMovies from './UnderratedMovies';
@@ -27,53 +25,133 @@ function MovieDetails() {
   }
 
   if (!movie) {
-    return <p style={{position:"relative",left:"460px",bottom:"50px",fontSize:"30px",color:"White",fontWeight:"bold"}}>Movie not found. Please Select <a href='/Movies' style = {{textDecoration:"none",color:"wheat"}}>Movie</a></p>;
+    return (
+      <p style={{
+        textAlign: "center",
+        marginTop: "100px",
+        fontSize: "24px",
+        color: "white"
+      }}>
+        Movie not found. <a href="/Movies" style={{color:"#ff4d4d"}}>Go Back</a>
+      </p>
+    );
   }
 
   return (
     <>
-      <div className='m-image' style={{ marginLeft: "50px", height: "450px",position: "relative", top: "10px" }}>
-        <img src={movie.image} alt={movie.title} style={{ height: "100%" }} />
-      </div>
+    <div style={{background:"black",border:"none",height:"80px",width:"1500px",position:"relative",bottom:"170px",opacity:"0.8"}}>
+    </div>
+    <div style={{backgroundColor: "#0f0f0f", color: "white", fontFamily: "Arial",marginTop:"-180px"}}>
 
-      <div>
-        <h3 style={{ position: "relative", bottom: "550px", left: "700px", fontSize: "50px", color: "white" }}>
-          {movie.title} <i style={{ fontSize: "25px" }}>({movie.year})</i>
-        </h3>
-        <p style={{ position: "relative", bottom: "120px", left: "100px", fontSize: "25px", color: "lightblue", fontWeight: "bold" }}>
-          Genres: {movie.type}
-        </p>
-        <p style={{ position: "relative", bottom: "620px", left: "680px", fontSize: "20px", color: "pink" }}>
-          Start to book your favourite movie in ₹ {movie.price}
-        </p>
-      </div>
+      {/* HERO SECTION */}
+      <div style={{
+        height: "100vh",
+        backgroundImage: `url(${movie.image})`,
+        backgroundSize:"contain",
+        backgroundPosition: "center",
 
-      <div className='Movie-details' style={{ position: "relative", bottom: "220px", left: "100px", fontSize: "18px" }}>
-        <h3 style={{ marginLeft: "450px", position: "relative", bottom: "400px", color: "goldenrod", fontSize: "20px" }}>
-          {movie.desc}
-        </h3>
-        <br />
-        <div style={{ marginLeft: "450px", position: "relative", bottom: "400px", color: "white" }}>
-          <p>Director <i style={{ color: "darkcyan" }}>{movie.director}</i></p>
-          <hr />
-          <p>Writers <i style={{ color: "darkcyan" }}>{movie.writers}</i></p>
-          <hr />
-          <p>Stars <i style={{ color: "darkcyan" }}>{movie.stars}</i></p>
-          <hr />
+        position: "relative"
+      }}>
+
+        {/* Overlay */}
+        <div style={{
+          background: "linear-gradient(to right, rgba(0,0,0,0.95), rgba(0,0,0,0.4))",
+          height: "100%",
+          display: "flex",
+          alignItems: "center"
+        }}>
+
+          <div style={{
+            display: "flex",
+            gap: "40px",
+            padding: "50px"
+          }}>
+
+            {/* Poster */}
+            <img
+              src={movie.image}
+              alt={movie.title}
+              style={{
+                width: "400px",
+                borderRadius: "10px",
+                height:"500px",
+                boxShadow: "0 0 20px black"
+              }}
+            />
+
+            {/* Info */}
+            <div>
+              <h1 style={{ fontSize: "42px", marginBottom: "10px" }}>
+                {movie.title}
+                <span style={{ fontSize: "20px", color: "#ccc" }}> ({movie.year})</span>
+              </h1>
+
+              <p style={{ color: "#aaa", fontSize: "18px" }}>
+                {movie.type}
+              </p>
+
+              <p style={{
+                marginTop: "20px",
+                fontSize: "22px",
+                color: "#ff4d4d"
+              }}>
+                🎟 ₹ {movie.price}
+              </p>
+
+              <Link
+                to="/SeatBooking"
+                state={{ title: movie.title, price: movie.price, image: movie.image }}
+                style={{
+                  display: "inline-block",
+                  marginTop: "20px",
+                  padding: "12px 25px",
+                  backgroundColor: "#e50914",
+                  color: "white",
+                  textDecoration: "none",
+                  borderRadius: "6px",
+                  fontSize: "18px"
+                }}
+              >
+                Book Tickets
+              </Link>
+            </div>
+
+          </div>
         </div>
       </div>
 
-      <div style={{ position: "relative", bottom: "600px", left: "560px" }}>
-        <button className="mbutton" style={{ width: "400px", backgroundColor: "black" }}>
-          <Link
-            to="/SeatBooking"
-            state={{ title: movie.title, price: movie.price, image: movie.image }}
-            style={{ textDecoration: "none", color: "white" }}
-          >
-            Booking Movie
-          </Link>
-        </button>
+      {/* DETAILS SECTION */}
+      <div style={{
+        padding: "40px 60px"
+      }}>
+        <h2 style={{ fontSize: "28px", marginBottom: "10px" }}>
+          About the Movie
+        </h2>
+
+        <p style={{
+          color: "#ccc",
+          lineHeight: "1.6",
+          marginBottom: "20px"
+        }}>
+          {movie.desc}
+        </p>
+
+        <div>
+          <p style={{ margin: "8px 0" }}>
+            <strong>Director : </strong> <span style={{color:"#4dd0e1"}}>{movie.director}</span>
+          </p>
+
+          <p style={{ margin: "8px 0" }}>
+            <strong>Writers : </strong> <span style={{color:"#4dd0e1"}}>{movie.writers}</span>
+          </p>
+
+          <p style={{ margin: "8px 0" }}>
+            <strong>Stars : </strong> <span style={{color:"#4dd0e1"}}>{movie.stars}</span>
+          </p>
+        </div>
       </div>
+
+    </div>
     </>
   );
 }

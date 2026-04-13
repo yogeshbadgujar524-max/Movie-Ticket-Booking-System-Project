@@ -5,7 +5,7 @@ function VideoPlayer({ onClose }) {
   return (
     <div className="video">
       <h2 
-        style={{position: "relative",bottom: "200px", left: "1100px", color: "red", cursor: "pointer",}}
+        style={{position: "relative",bottom: "250px", left: "1220px", color: "red", cursor: "pointer",}}
         onClick={onClose}
       >
         X

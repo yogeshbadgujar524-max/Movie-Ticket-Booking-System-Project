@@ -7,7 +7,7 @@
     height: 100%;
 }
 .contact img{
-    height: 100%;
+    height: 105%;
     width: 100%;
     background-position: center;
     background-size: cover;
@@ -55,6 +55,7 @@
     top: -50px;
     right: 250px;
 }
+
 .contact-menu span{
     color:gold;
     position: relative;
@@ -78,7 +79,7 @@
     font-size: large;
     margin-left: -80px;
     margin-top: 30px;
-    border-radius: 20px;
+    border-radius: 10px;
     border: none;
     font-weight: 500;
 }

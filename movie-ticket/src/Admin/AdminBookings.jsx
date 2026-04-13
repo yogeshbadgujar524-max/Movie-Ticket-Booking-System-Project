@@ -1,4 +1,3 @@
-import React from 'react'
 import { useState,useEffect } from 'react';
 import axios from 'axios';
 
@@ -21,7 +20,7 @@ function AdminBookings() {
         <>
     <h2 style={{
       position:"relative",
-      left:"500px",
+      left:"550px",
       color:"ButtonShadow",
       fontSize:"30px"
     }}

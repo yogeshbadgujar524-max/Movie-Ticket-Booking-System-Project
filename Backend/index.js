@@ -54,6 +54,16 @@ app.post('/contact',(req,res)=>{
     .catch(error => res.json(error))
 })
 
+app.get("/contact", async (req, res) => {
+  try {
+    const contact = await ContactdbModel.find();
+    res.json(contact);
+  } catch (error) {
+    console.error("Error fetching users:", error);
+    res.status(500).json({ error: "Internal server error" });
+  }
+});
+
 app.post('/Payment',(req,res)=>{
     PaymentModel.create(req.body)
     .then(payment => res.json(payment))

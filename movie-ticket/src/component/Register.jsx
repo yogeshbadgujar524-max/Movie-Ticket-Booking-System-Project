@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './Register.css';
 import axios from 'axios'
+import Swal from 'sweetalert2';
 
 function Register() {
   const navigate = useNavigate();
@@ -64,6 +65,17 @@ const generatedUserId = () => {
       alert("Passwords do not match");
       return;
     }
+    Swal.fire({
+              position: "center",
+              icon: "success",
+              title: "User Registered Successfully !!",
+              showConfirmButton: true,
+              confirmButtonText: 'OK',
+              confirmButtonColor: 'green',
+              customClass: {
+                confirmButton: 'Mybutton'
+              }
+            });
     navigate('/login');
   }
 

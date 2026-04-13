@@ -129,11 +129,14 @@ function MyMovies() {
               }}
               onClick={() => handleShowDetails(movie)} //  click handler
             >
+              <div style={{height:"5px"}}>
+                <img src={movie.image} alt=''></img>
+              </div>
               <br></br>
               <h2
                 style={{
                   position: "relative",
-                  left: "20px",
+                  left: "100px",
                   top: "-50px",
                   fontSize: "40px",
                   color:"black"
@@ -153,7 +156,7 @@ function MyMovies() {
                     fontWeight: "bolder",
                     position:"relative",
                     top:"150px",
-                    right:"250px"
+                    right:"230px"
                   }}
                 >
                   Booking ID: {movie.bookingId}
@@ -170,9 +173,9 @@ function MyMovies() {
                 <h3
                   style={{
                     bottom: "10px",
-                    left: "-220px",
+                    left: "-120px",
                     position: "relative",
-                    color:'darkred'
+                    color:'darkgreen'
                     
                   }}
                 >
@@ -231,13 +234,13 @@ function MyMovies() {
 
       <div style={{position:"relative",left:"300px",bottom:"-40px",fontSize:"22px"}}>
             <p style={{position:"relative",right:"-100px",top:"-60px",color:"yellow",fontSize:"18px"}}>{selectedMovie.bookingId}</p>
-            <p style={{position:"relative",top:"-70px",right:"300px",fontSize:"30px",background:"black",color:"Highlight",fontWeight:"bold",textAlign:"center"}}><i className="fa-solid fa-film"></i> {selectedMovie.title}</p>
+            <p style={{position:"relative",top:"-70px",right:"300px",fontSize:"30px",background:"black",color:"Highlight",fontWeight:"bold",textAlign:"center",display:"flex", alignItems:"center", justifyContent:"center", height:"50px"}}><i className="fa-solid fa-film"></i> {selectedMovie.title}</p>
             <p style={{position:"relative",top:"-30px",fontWeight:"bold",right:"250px"}}><i className="fa-solid fa-chair"></i> Seats : {selectedMovie.selectedSeats}</p>
             <p style={{position:"relative",top:"-10px",fontWeight:"bold",right:"250px"}}><i className="fa-solid fa-ticket"></i> Mode : {selectedMovie.selectedMode}</p>
             <p style={{position:"relative",top:"-130px",fontWeight:"bold"}}><i className="fa-solid fa-calendar-days"></i> Date : {selectedMovie.selectedDate}</p>
             <p style={{position:"relative",top:"-100px",fontWeight:"bold"}}><i className="fa-solid fa-clock"></i> Time : {selectedMovie.selectedTime}</p>
-            <p style={{position:"relative",bottom:"80px",right:"150px",color:"AppWorkspace"}}>Booked By : <span style={{color:"brown"}}>{selectedMovie.email}</span></p>
-            <div style={{position:"relative",top:"-410px",right:"280px",}}> 
+            <p style={{position:"relative",bottom:"80px",right:"150px",color:"AppWorkspace"}}>Booked By : <span style={{color:"red"}}>{selectedMovie.email}</span></p>
+            <div style={{position:"relative",top:"-430px",right:"280px",}}> 
             <input type="checkbox" checked readOnly /> Completed
             </div>
       </div>

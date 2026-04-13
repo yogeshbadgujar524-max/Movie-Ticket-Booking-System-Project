@@ -89,7 +89,20 @@ const UnderratedMovies = [
     director: "Prabhu Deva",
     writers: ["Veeru Potla", "Farhad-Sajid"],
     stars: ["Girish Kumar", "Shruti Haasan", "Sonu Sood"]
-  }
+  },
+  {
+    id: 8,
+    title: "3 BHK",
+    year: 2024,
+    type: "Family",
+    price: 130,
+    category: "Most Watched",
+    image: "https://m.media-amazon.com/images/M/MV5BZTU0ODU1MjgtZmY0OC00Njc2LWFhY2YtZWU2MDk1YThkMzkxXkEyXkFqcGc@._V1_.jpg",
+    desc: "A heartfelt story of a middle-class family moving into a dream home, only to discover that true comfort lies in emotional bonds rather than material spaces. A touching portrayal of relationships and aspirations.",
+    director: "Vikram Mehra",
+    writers: ["Anjali Nair", "Vikram Mehra"],
+    stars: ["Neena Gupta", "Rajkummar Rao", "Amrita Subhash"]
+  },
 ];
 
 export default UnderratedMovies;
