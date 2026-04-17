@@ -3,7 +3,7 @@ import Navbar from './component/navbar';
 import ProtectedRoute from './component/ProtectedRoute';
 import Movies from './component/Movies';
 import Home from './component/Home';
-import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useNavigate,useLocation } from 'react-router-dom';
 import FooterWrapper from './component/FooterWrapper';
 import Contact from './component/Contact';
 import SeatBooking from './component/SeatBooking';
@@ -16,6 +16,7 @@ import AdminDashboard from './Admin/AdminDashboard';
 import AdminBookings from './Admin/AdminBookings';
 import { BookingProvider } from './component/BookingContext';
 import UserQueries from './Admin/UserQueries';
+import Loading from './component/Loading';
 
 function AppWrapper() {
   return (
@@ -29,20 +30,48 @@ function AppWrapper() {
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [userType, setUserType] = useState(null); // NEW
+  const [userType, setUserType] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
-  const [usertype, setUsertype] = useState('');
   const navigate = useNavigate();
+  const location = useLocation();
+  const [pageLoading, setPageLoading] = useState(false);
+
+
+  //Loading
+const loadingRoutes = ["/", "/SeatBooking","/MyMovies","/movie/:category/:id","/dashboard"];
+
+useEffect(() => {
+  const isMatch =
+    loadingRoutes.includes(location.pathname) ||
+    location.pathname.startsWith("/movie/");
+
+  if (isMatch) {
+    setPageLoading(true);
+
+    const timer = setTimeout(() => {
+      setPageLoading(false);
+    }, 1500);
+
+    return () => clearTimeout(timer);
+  }
+}, [location]);
+  
 
   // Load from localStorage once
   useEffect(() => {
-    const storedLoginStatus = localStorage.getItem('isLoggedIn');
-    const storedUserType = localStorage.getItem('userType');
-    if (storedLoginStatus === 'true') {
-      setIsLoggedIn(true);
-      setUserType(storedUserType);
-    }
-    setIsLoading(false);
+     const timer = setTimeout(() => {
+      const storedLoginStatus = localStorage.getItem('isLoggedIn');
+      const storedUserType = localStorage.getItem('userType');
+
+      if (storedLoginStatus === 'true') {
+        setIsLoggedIn(true);
+        setUserType(storedUserType);
+      }
+        setIsLoading(false);
+  }, 2000);
+
+  return () => clearTimeout(timer);
+
   }, []);
 
   // Update login state
@@ -62,23 +91,23 @@ function App() {
     navigate('/Login');
   };
 
-  if (isLoading) return <div>Loading...</div>;
+  if (isLoading) 
+    return <Loading/>;
 
   return (
     <>
-      {/* Pass userType to Navbar */}
-      
+      {pageLoading && <Loading/>}
       <Navbar isLoggedIn={isLoggedIn} userType={userType} onLogout={handleLogout} />
 
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/Movies" element={<Movies />} />
+        <Route path="/" element={<Home isLoggedIn = {isLoggedIn}/>} />
+        <Route path="/Movies" element={<Movies isLoggedIn = {isLoggedIn}/>} />
         {/* <Route path="/Contact" element={<Contact />} /> */}
 
         {/* Private Routes */}
         <Route path="/SeatBooking" element={
             <ProtectedRoute isLoggedIn={isLoggedIn}>
-              <SeatBooking />
+              <SeatBooking/>
             </ProtectedRoute>
           } />
         <Route path="/MyMovies" element={

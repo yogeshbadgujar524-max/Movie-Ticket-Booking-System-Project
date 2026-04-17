@@ -21,63 +21,44 @@ const generatedUserId = () => {
 };
 
 
-  const handleRegister = (e) => {
-    e.preventDefault();
+  const handleRegister = async (e) => {
+  e.preventDefault();
 
-    const userid = generatedUserId();
-
-    // const userData = {
-    //   userid,
-    //   fname,
-    //   lname,
-    //   email,
-    //   phone,
-    //   password
-    // };
-
-            // Get existing users from localStorage
-        let users = JSON.parse(localStorage.getItem("users")) || [];
-
-
-        // New user data
-        const newUser = {
-          userid,
-          fname,
-          lname,
-          email,
-          phone,
-          password
-        };
-
-        // Add new user to the list
-        users.push(newUser);
-
-        // Save back to localStorage
-        localStorage.setItem("users", JSON.stringify(users));
-
-
-    axios.post('http://localhost:3001/register', newUser)
-    
-    .then(result => console.log(result))
-    .catch(err => console.log(err))
-
-    if (password !== confirmpass) {
-      alert("Passwords do not match");
-      return;
-    }
-    Swal.fire({
-              position: "center",
-              icon: "success",
-              title: "User Registered Successfully !!",
-              showConfirmButton: true,
-              confirmButtonText: 'OK',
-              confirmButtonColor: 'green',
-              customClass: {
-                confirmButton: 'Mybutton'
-              }
-            });
-    navigate('/login');
+  if (password !== confirmpass) {
+    alert("Passwords do not match");
+    return;
   }
+
+  const userid = generatedUserId();
+
+  const newUser = {
+    userid,
+    fname,
+    lname,
+    email,
+    phone,
+    password
+  };
+
+  try {
+    await axios.post('http://localhost:3001/register', newUser);
+
+    Swal.fire({
+      position: "center",
+      icon: "success",
+      title: "User Registered Successfully !!",
+      showConfirmButton: true,
+      confirmButtonText: 'OK',
+      confirmButtonColor: 'green',
+      customClass: { confirmButton: 'Mybutton' }
+    });
+
+    navigate('/login');
+  } catch (err) {
+    console.log(err);
+    alert("Registration failed");
+  }
+};
 
   return (
     <div className="form-container">

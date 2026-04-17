@@ -30,26 +30,18 @@ function Login({ onLogin }) {
       }
     } else {
       try {
-        const users = JSON.parse(localStorage.getItem("users")) || [];
+        const res = await axios.post('http://localhost:3001/login', { email, password });
 
-        // Find user by email and password
-        const loggedInUser = users.find(u => u.email === email && u.password === password);
-
-        if (loggedInUser) {
-          //  Store current user info for profile page
-          localStorage.setItem("currentUser", JSON.stringify(loggedInUser));
-
-          // Optional: call backend
-          await axios.post('http://localhost:3001/login', { email, password });
-
-          //  Save login status
+        if (res.data && res.data.email) {
           localStorage.setItem('isLoggedIn', 'true');
           localStorage.setItem('userType', 'User');
-          localStorage.setItem("email",email);
+          localStorage.setItem("currentUser", JSON.stringify(res.data));
+          localStorage.setItem("email", email);
+
           onLogin('User');
           navigate('/Profile');
         } else {
-          alert('Invalid email or password');
+          alert(res.data.email);
         }
       } catch (err) {
         console.log(err);

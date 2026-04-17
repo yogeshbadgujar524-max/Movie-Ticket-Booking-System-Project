@@ -6,6 +6,7 @@ import Swal from 'sweetalert2';
 import './SeatBooking.css';
 import 'sweetalert2/dist/sweetalert2.min.css';
 import QRCode from 'react-qr-code';
+import Loading from './Loading';
 
 function SeatBooking() {
   const Otp = useRef();
@@ -52,7 +53,7 @@ function SeatBooking() {
   const handlePayment = () => {
     const transactionId = GenerateTransactionId();
 
-    if (Payment === "") {
+    if (Payment === null) {
       alert("Select Payment Method");
     }
     else {
@@ -66,9 +67,11 @@ function SeatBooking() {
       pay.current.style.position = "relative"
       pay.current.style.left = "100px";
       setTimeout(() => {
-        setShowPayment(false);
-        setShowotp(true);
-        alert("Payment Successfully !!!")
+        if(confirm("Payment Successfully !!!")){
+          setShowPayment(false);
+          setShowotp(true);
+          
+        }
       }, 4000);
     }
   }
@@ -113,7 +116,7 @@ function SeatBooking() {
   const otpref = useRef();
   const seatsRef = useRef(null);
   const proc = useRef(null);
-  const state = useRef(null);
+  const state = useRef(null)
 
   const [seats, setSeats] = useState([]);
   const [count, setCount] = useState(0);
@@ -137,7 +140,7 @@ function SeatBooking() {
     }
     setSeats(generatedSeats);
 
-  }, [selectedDate, selectedTime]);
+  }, [selectedDate, selectedTime,]);
 
 
   // Handle seat selection
@@ -198,9 +201,6 @@ function SeatBooking() {
     else if (otppin.current.value === "" || otppin.current.value.length < 6) {
       alert("Please Enter OTP in 6 digits")
     }
-    else if(otp.current.value !== otp){
-      alert("Please Enter Valid OTP")
-    }
 
     else {
       setBookedNotification(true);
@@ -246,6 +246,7 @@ function SeatBooking() {
 
       alert("You'r Verification is complete \n Please click OK");
       pro.current.style.display = "block";
+      
 
       setTimeout(() => {
         Swal.fire({
@@ -359,11 +360,11 @@ function SeatBooking() {
                 <option>Rahul Raj , Dumas-rd Piplod</option>
                 <option>Roongta Cinemas , Bharthana</option>
               </select>
+            </div>
               <input type='button' onClick={handleOTP} value='Booking Now' className='BTN' />
               <div className='process' ref={proc} style={{ display: 'none' }}>
                 <p>Processing...</p>
               </div>
-            </div>
           </div>
         </div>
 

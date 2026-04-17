@@ -9,10 +9,38 @@ import UnderratedMovies from './UnderratedMovies';
 import { useNavigate } from 'react-router-dom';
 import VideoPlayer from './VideoPlayer';
 import { BookingContext } from './BookingContext';
+import Swal from 'sweetalert2';
 
 // https://i.ytimg.com/vi/tPlRgVCeBT8/maxresdefault.jpg
 
-function Movies() {
+function Movies({isLoggedIn}) {
+  useEffect(() => {
+      if(!isLoggedIn){
+      setTimeout(() => {
+        Swal.fire({
+          title: "Please First Login This Site",
+          showConfirmButton: true,
+          confirmButtonText: 'OK',
+          confirmButtonColor: 'green',
+          customClass: { confirmButton: 'Mybutton' },
+    
+          showClass: {
+            popup: `
+          animate__animated
+          animate__fadeInUp
+          animate__faster
+        ` },
+          hideClass: {
+            popup: `
+          animate__animated
+          animate__fadeOutDown
+          animate__faster
+        ` }
+    
+        });
+      }, 5000);
+    }
+    }, [])
 
   const [play,setPlay] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
@@ -89,9 +117,9 @@ function Movies() {
 
     // const location = useLocation();
   
-    // useEffect(() => {
-    //   window.scrollTo(0,0);
-    // }, [location]);
+    useEffect(() => {
+      window.scrollTo(0,0);
+    }, [location]);
 
   return (
     <>

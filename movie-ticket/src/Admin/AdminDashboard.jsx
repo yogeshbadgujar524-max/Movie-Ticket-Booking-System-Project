@@ -36,16 +36,15 @@ function AdminDashboard() {
       if (result.isConfirmed) {
         try {
           await axios.delete(`http://localhost:3001/register/${id}`);
-          JSON.parse(localStorage.removeItem("users")) || [];
           Swal.fire({
-            title:"Deleted!", 
-            text:"User has been deleted.", 
-            icon:"success",
-            confirmButtonText:"OK",
-            customClass:{
-              confirmButton:'Mybutton'
-            }          
-        });
+            title: "Deleted!",
+            text: "User has been deleted.",
+            icon: "success",
+            confirmButtonText: "OK",
+            customClass: {
+              confirmButton: 'Mybutton'
+            }
+          });
           fetchUsers(); // refresh list
         } catch (err) {
           console.error("Error deleting user:", err);
@@ -73,25 +72,43 @@ function AdminDashboard() {
   };
 
   // Save updated user
-  const handleUpdate = async () => {
-    try {
-      await axios.put(`http://localhost:3001/register/${editingUser}`, formData);
-      Swal.fire({
-        title:"Updated!", 
-        text:"User has been updated.",
-        icon: "success",
-        confirmButtonText:"OK",
-        customClass:{
-              confirmButton:'Mybutton'
-            }
-      });
-      setEditingUser(null);
-      fetchUsers();
-    } catch (err) {
-      console.error("Error updating user:", err);
-      Swal.fire("Error", "Could not update user.", "error");
+ const handleUpdate = async () => {
+  Swal.fire({
+    title: "Do you want to save the changes?",
+    showDenyButton: true,
+    showCancelButton: true,
+    confirmButtonText: "Save",
+    denyButtonText: `Don't save`
+  }).then(async (result) => {
+
+    if (result.isConfirmed) {
+      try {
+        await axios.put(`http://localhost:3001/register/${editingUser}`, formData);
+
+        Swal.fire({
+          title: "Updated!",
+          text: "User has been updated.",
+          icon: "success",
+          confirmButtonText: "OK",
+          customClass: {
+            confirmButton: 'Mybutton'
+          }
+        });
+
+        setEditingUser(null);
+        fetchUsers();
+
+      } catch (err) {
+        console.error("Error updating user:", err);
+        Swal.fire("Error", "Could not update user.", "error");
+      }
+
+    } else if (result.isDenied) {
+      Swal.fire("Changes are not saved", "", "info");
     }
-  };
+
+  });
+};
 
   return (
     <>
@@ -192,12 +209,12 @@ function AdminDashboard() {
             }}
           >
             <h3>Edit User</h3>
-            <div className="update" style={{display:"flex",flexDirection:"column"}}>
-            First Name<input name="fname" value={formData.fname} onChange={handleChange} placeholder="First Name" style={{fontSize:"20px",margin:"10px"}}/>
-            Last Name<input name="lname" value={formData.lname} onChange={handleChange} placeholder="Last Name" style={{fontSize:"20px",margin:"10px"}}/>
-            Email<input name="email" value={formData.email} onChange={handleChange} placeholder="Email" style={{fontSize:"20px",margin:"10px"}}/>
-            Phone No.<input name="phone" value={formData.phone} onChange={handleChange} placeholder="Phone" style={{fontSize:"20px",margin:"10px"}}/>
-            Password<input name="password" value={formData.password} onChange={handleChange} placeholder="Password" style={{fontSize:"20px",margin:"10px"}}/>
+            <div className="update" style={{ display: "flex", flexDirection: "column" }}>
+              First Name<input name="fname" value={formData.fname} onChange={handleChange} placeholder="First Name" style={{ fontSize: "20px", margin: "10px" }} />
+              Last Name<input name="lname" value={formData.lname} onChange={handleChange} placeholder="Last Name" style={{ fontSize: "20px", margin: "10px" }} />
+              Email<input name="email" value={formData.email} onChange={handleChange} placeholder="Email" style={{ fontSize: "20px", margin: "10px" }} />
+              Phone No.<input name="phone" value={formData.phone} onChange={handleChange} placeholder="Phone" style={{ fontSize: "20px", margin: "10px" }} />
+              Password<input name="password" value={formData.password} onChange={handleChange} placeholder="Password" style={{ fontSize: "20px", margin: "10px" }} />
             </div>
 
             <div style={{ marginTop: "10px" }}>

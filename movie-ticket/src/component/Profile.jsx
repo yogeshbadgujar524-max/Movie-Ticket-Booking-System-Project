@@ -3,8 +3,9 @@ import { useNavigate, useLocation } from "react-router-dom";
 import Swal from "sweetalert2";
 import "./Profile.css";
 import { BookingContext } from "./BookingContext";
+import Loading from "./Loading";
 
-function Profile() {
+function Profile({isLoading,setIsLoading}) {
   const [showDetails, setShowDetails] = useState(false);
   const [mode, setMode] = useState("dark");
   const [showNotify,setShowNotify] = useState(false);
@@ -14,10 +15,17 @@ function Profile() {
 
   const { bookedNotification } = useContext(BookingContext);
 
-  const usersData = JSON.parse(localStorage.getItem("currentUser")) || {};
+  const usersData = JSON.parse(localStorage.getItem("currentUser"));
 
 
 
+  useEffect(() => {
+    setTimeout(() => {
+      
+      setIsLoading(true)
+    }, 3000);
+  }, [isLoading])
+  
   useEffect(() => {
     window.scrollTo(0, 0);
     document.body.style.backgroundColor =
@@ -63,6 +71,9 @@ function Profile() {
   const handleCloseDetails = () => {
     setShowDetails(false);
   };
+
+    if (isLoading) 
+    return <Loading/>;
 
   return (
     <>
