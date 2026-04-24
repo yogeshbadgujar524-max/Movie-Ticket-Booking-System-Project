@@ -19,7 +19,7 @@ app.post('/login', (req, res) => {
     .then(user => {
       if (user) {
         if (user.password === password) {
-          res.json(user); // ✅ send full user
+          res.json(user); // send full user
         } else {
           res.json("password is incorrect");
         }

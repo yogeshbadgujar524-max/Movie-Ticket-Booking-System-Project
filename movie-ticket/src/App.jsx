@@ -38,7 +38,7 @@ function App() {
 
 
   //Loading
-const loadingRoutes = ["/", "/SeatBooking","/MyMovies","/movie/:category/:id","/dashboard"];
+const loadingRoutes = ["/", "/SeatBooking","/Profile","/MyMovies","/movie/:category/:id","/dashboard"];
 
 useEffect(() => {
   const isMatch =

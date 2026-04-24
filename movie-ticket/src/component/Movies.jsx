@@ -14,6 +14,7 @@ import Swal from 'sweetalert2';
 // https://i.ytimg.com/vi/tPlRgVCeBT8/maxresdefault.jpg
 
 function Movies({isLoggedIn}) {
+
   useEffect(() => {
       if(!isLoggedIn){
       setTimeout(() => {

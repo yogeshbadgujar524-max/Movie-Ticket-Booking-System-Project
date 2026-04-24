@@ -568,6 +568,10 @@ function SeatBooking() {
                       <option>SBI</option>
                       <option>HDFC</option>
                       <option>ICICI</option>
+                      <option>Kotak</option>
+                      <option>BOI</option>
+                      <option>BOB</option>
+                      <option>Central Bank Of India</option>
                     </select>
                   </>
                 )}

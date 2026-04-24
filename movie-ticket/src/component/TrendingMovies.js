@@ -2,7 +2,7 @@ const TrendingMovies = [
 
   {
     id: 1,
-    title: "The Kerala Story 3",
+    title: "The Kerala Story 2",
     year: 2026,
     type: "Drama / Thriller",
     price: 210,

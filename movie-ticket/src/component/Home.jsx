@@ -31,7 +31,7 @@ function Home({isLoggedIn}) {
       ` }
   
       });
-    }, 5000);
+    }, 10000);
   }
   }, [])
 
