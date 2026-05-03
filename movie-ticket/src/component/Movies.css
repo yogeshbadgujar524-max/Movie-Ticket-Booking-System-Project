@@ -54,6 +54,19 @@ input[type="checkbox"]:checked{
 input[type="radio"]:checked{
  accent-color: orangered;
 }
+
+
+@media (max-width:590px){
+  .slider-wrapper form{
+    display: none;
+  }
+  .catlog{
+    display: none;
+  }
+  
+}
+
+
 .main-movie{
   height: 710px;
   width: 1180px;

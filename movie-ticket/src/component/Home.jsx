@@ -4,35 +4,36 @@ import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Navigate, Link, useNavigate } from 'react-router-dom'
 import Swal from 'sweetalert2';
+import { motion } from 'motion/react';
 
-function Home({isLoggedIn}) {
+function Home({ isLoggedIn }) {
 
   useEffect(() => {
-    if(!isLoggedIn){
-    setTimeout(() => {
-      Swal.fire({
-        title: "Please First Login This Site",
-        showConfirmButton: true,
-        confirmButtonText: 'OK',
-        confirmButtonColor: 'green',
-        customClass: { confirmButton: 'Mybutton' },
-  
-        showClass: {
-          popup: `
+    if (!isLoggedIn) {
+      setTimeout(() => {
+        Swal.fire({
+          title: "Please First Login This Site",
+          showConfirmButton: true,
+          confirmButtonText: 'OK',
+          confirmButtonColor: 'green',
+          customClass: { confirmButton: 'Mybutton' },
+
+          showClass: {
+            popup: `
         animate__animated
         animate__fadeInUp
         animate__faster
       ` },
-        hideClass: {
-          popup: `
+          hideClass: {
+            popup: `
         animate__animated
         animate__fadeOutDown
         animate__faster
       ` }
-  
-      });
-    }, 10000);
-  }
+
+        });
+      }, 10000);
+    }
   }, [])
 
   const location = useLocation();
@@ -60,7 +61,11 @@ function Home({isLoggedIn}) {
         <div className='line'>
 
         </div>
-        <div className='boxes'>
+         <motion.div
+                      initial={{ y: 50, opacity: 0 }}
+                      whileInView={{ y: 0, opacity: 1 }}
+                      viewport={{ once: true, amount: 0.2 }}
+                      transition={{ duration: 0.8, type: "spring", stiffness: 20 }} className='boxes'>
           <div className='box'>
             <p>Join Now</p>
             <h3>Upcomming Film <br />Festivals</h3>
@@ -73,9 +78,13 @@ function Home({isLoggedIn}) {
             <p>Get Tickets</p>
             <h3>Watching Comedy <br />Shows</h3>
           </div>
-        </div>
+        </motion.div>
         <div className='Home-movies'>
-          <div className='home-main-movie'>
+          <motion.div
+            initial={{ y: 50, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.8, type: "spring", stiffness: 20 }} className='home-main-movie'>
             <img src='https://static.toiimg.com/thumb/resizemode-4,width-1280,height-720,msid-126268362/126268362.jpg'></img>
             <div className='black'></div>
             <h2>The Kerala Story 2</h2>
@@ -84,9 +93,13 @@ function Home({isLoggedIn}) {
               <marquee>
                 Director : Sudipto Sen &nbsp; Writers : Sudipto Sen, Suryapal Singh &nbsp; Stars : Adah Sharma, Yogita Bihani, Sonia Balani</marquee>
             </div>
-          </div>
+          </motion.div>
           <br></br>
-          <div className='h-movies'>
+          <motion.div
+            initial={{ y: 50, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.8, type: "spring", stiffness: 20 }} className='h-movies'>
             <div className='movie'>
               <img src='https://m.media-amazon.com/images/I/91R0hGWtbpL._UF1000,1000_QL80_.jpg'></img>
 
@@ -111,7 +124,7 @@ function Home({isLoggedIn}) {
               <h3>Khatta Meetha</h3>
               <p>Type : Comedy</p>
             </div>
-          </div>
+          </motion.div>
         </div>
         <button className='btn' onClick={movie}>See More....</button>
       </div>
